@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#244c3d">
+  {% seo %}
+  <link rel="icon" href="{{ '/assets/images/fox-mark.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header wrapper">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="All About Foxes home">
+      <img src="{{ '/assets/images/fox-mark.svg' | relative_url }}" width="46" height="46" alt="">
+      <span>All About <strong>Foxes</strong><small>A curious kid's field guide</small></span>
+    </a>
+    <nav aria-label="Main navigation">
+      {% include navigation.html items=site.data.navigation %}
+    </nav>
+  </header>
+  <main id="main" tabindex="-1">{{ content }}</main>
+  <footer class="site-footer wrapper">
+    <a class="footer-brand" href="{{ '/' | relative_url }}">Stay curious. Stay wild.</a>
+    <p>Made for Wesley. Built for discovery.</p>
+    <p class="small-print">Watch wildlife from a distance. Wild foxes are not pets.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,28 @@
+title: All About Foxes
+description: A little place for big discoveries about foxes. A wildlife learning adventure for curious kids, created for Wesley.
+url: "https://allaboutfoxes.com"
+baseurl: ""
+lang: en
+timezone: Etc/UTC
+markdown: kramdown
+permalink: pretty
+strict_front_matter: true
+liquid:
+  error_mode: strict
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: page
+exclude:
+  - .vs
+  - _templates
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - run.cmd
+  - scripts
+  - vendor
