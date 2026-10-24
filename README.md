@@ -3,9 +3,11 @@
 A small wildlife field guide for curious kids, made for Wesley. Built with
 Jekyll and deployed to GitHub Pages at **https://www.allaboutfoxes.com**.
 
-The first edition has just a front page (plus a friendly 404). There are no
-empty "coming soon" pages, external fonts, trackers, cookies, JavaScript, or
-third-party image requests. The SVG fox illustrations are original site artwork.
+The site includes the original front page, a Meet the Foxes section, an
+illustrated Red Fox article, and a friendly 404. There are no empty "coming
+soon" pages, external fonts, trackers, cookies, JavaScript, or third-party
+image requests. The SVG fox illustrations are original site artwork; the
+locally hosted photograph is credited below and in the article.
 
 ## Local preview
 
@@ -48,28 +50,32 @@ These test pages are never included in the published site.
 | `_data/navigation.yml` | Header links; supports nested `children` |
 | `_layouts/default.html` | Shared head, header, navigation, and footer |
 | `_layouts/page.html` | Article layout with title and breadcrumbs |
+| `_layouts/section.html` | Section landing page with automatic fox article cards |
+| `_layouts/fox.html` | Fox profile with photograph, credit, and quick facts |
 | `_includes/navigation.html` | Recursive navigation renderer |
+| `foxes/index.md` | Meet the Foxes section at `/foxes/` |
+| `foxes/red-fox/index.md` | Complete example article at `/foxes/red-fox/` |
 | `_templates/page.md` | Copyable page starter; not published by Jekyll |
 | `assets/css/style.css` | Responsive design and reduced-motion support |
-| `assets/images/` | Original local SVG artwork |
+| `assets/images/` | Original SVG artwork and a credited NPS photograph |
 | `.github/workflows/pages.yml` | Build, validate, and deploy |
 | `scripts/check_site.rb` | Build-output and page-structure checks |
 
 ## Add pages and subpages
 
-Copy `_templates/page.md` to `foxes\index.md` for `/foxes/`. Edit its title,
+Copy `_templates/page.md` to `fox-life\index.md` for `/fox-life/`. Edit its title,
 description, and Markdown, and remove `breadcrumbs` for this top-level page.
 No project file or route registration is needed: Jekyll finds the page.
 
-For a subpage, copy the starter to `foxes\red-fox\index.md`. That becomes
-`/foxes/red-fox/`. Set the child's front matter to:
+For a subpage, copy the starter to `fox-life\food\index.md`. That becomes
+`/fox-life/food/`. For example, set the child's front matter to:
 
 ```yaml
 ---
-title: Red fox
-description: Meet the clever red fox and discover where it lives.
-eyebrow: Foxes of the world
-breadcrumbs: [{ title: Foxes of the world, url: /foxes/ }]
+title: What foxes eat
+description: Discover what is on a fox's menu.
+eyebrow: Fox life
+breadcrumbs: [{ title: Fox life, url: /fox-life/ }]
 ---
 ```
 
@@ -98,6 +104,36 @@ also works under a repository subpath:
 
 Keep facts age-appropriate, cite reliable sources, and only use photos you own
 or have permission to publish. Avoid publishing personal details about children.
+
+### Add another fox to Meet the Foxes
+
+Use `foxes\red-fox\index.md` as the complete working example. Create a new
+directory such as `foxes\arctic-fox` and write its `index.md`. Keep `layout: fox`
+and `section: /foxes/`, then update the title, description, scientific name,
+`nav_order`, breadcrumbs, and all image and quick-fact fields for that species.
+The profile currently uses a 960-by-481 photo frame; prepare new profile photos
+at that size or update the image dimensions in the shared layout as needed.
+
+The section layout automatically lists published pages whose `section` matches
+the landing page URL, sorted by `nav_order`. Do not add each fox to the header:
+the header links to Meet the Foxes, its cards link to articles, and each article
+has breadcrumbs and links back to the section and homepage. The section header
+link stays highlighted while reading a fox article, without incorrectly marking
+the section landing page as the current page.
+
+Article headings create the on-page contents list through Kramdown's `{:toc}`.
+Use the existing `field-illustration`, `explorer-note`, and `wonder-box` patterns
+for captioned figures, activities, and revealable questions. Cite sources at the
+end of each article and keep photo credits attached to the photograph.
+
+### Photograph credit
+
+`assets/images/red-fox-yellowstone.jpg` is a locally hosted photograph by
+**NPS / Neal Herbert**, from [Yellowstone National Park's Red Fox page](https://www.nps.gov/yell/learn/nature/red-fox.htm).
+The [NPS image-use policy](https://www.nps.gov/aboutus/disclaimer.htm) identifies
+NPS-created U.S. Government works as public domain unless otherwise noted.
+The downloaded image is 960 by 481 pixels. No NPS logo is used and no endorsement
+is implied. The fox field-marks SVG is an original illustration, not a photograph.
 
 ## GitHub publishing
 

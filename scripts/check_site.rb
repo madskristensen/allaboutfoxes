@@ -62,13 +62,34 @@ def check_site(destination, baseurl: "")
   assert(root.join("robots.txt").read.include?("Sitemap: https://www.allaboutfoxes.com#{baseurl}/sitemap.xml"), "Robots sitemap URL must use the www domain")
   sitemap = Nokogiri::XML(root.join("sitemap.xml").read)
   assert(sitemap.xpath("//*[local-name()='loc']").all? { |location| location.text.start_with?("https://www.allaboutfoxes.com#{baseurl}/") }, "Sitemap URLs must use the www domain")
-	%w[Gemfile Gemfile.lock README.md run.cmd scripts/check_site.rb .github/workflows/pages.yml].each do |path|
+	%w[Gemfile Gemfile.lock README.md run.cmd scripts/check_site.rb .github/workflows/pages.yml .github/copilot-instructions.md].each do |path|
 	assert(!root.join(path).exist?, "Source-only file leaked into site: #{path}")
   end
-  puts "Checked #{pages.length} pages: metadata, headings, images, local links, fragments, and output files."
+	puts "Checked #{pages.length} pages: metadata, headings, images, local links, fragments, and output files."
+end
+
+def check_fox_pages(destination, baseurl: "")
+  home = Nokogiri::HTML(File.read(File.join(destination, "index.html")))
+  section = Nokogiri::HTML(File.read(File.join(destination, "foxes", "index.html")))
+  article = Nokogiri::HTML(File.read(File.join(destination, "foxes", "red-fox", "index.html")))
+  assert(home.at_css(".hero .button")["href"] == "#{baseurl}/foxes/", "Homepage must link to Meet the Foxes")
+  assert(section.at_css(".species-card[href='#{baseurl}/foxes/red-fox/']"), "Section must link to Red Fox")
+  assert(section.at_css(".site-header a[aria-current='page']")["href"] == "#{baseurl}/foxes/", "Section navigation must mark its current page")
+  assert(article.at_css(".site-header .is-section-active")["href"] == "#{baseurl}/foxes/", "Article must highlight its parent section")
+  assert(article.css(".site-header a[aria-current='page']").empty?, "Parent section must not claim to be the current page")
+  assert(article.at_css(".breadcrumbs a[href='#{baseurl}/foxes/']"), "Article is missing its section breadcrumb")
+  assert(article.at_css(".breadcrumbs [aria-current='page']").text == "Red Fox", "Article breadcrumb must identify the current page")
+  assert(article.at_css(".explore-links a[href='#{baseurl}/foxes/']"), "Article must link back to its section")
+  assert(article.css(".quick-facts dt").length == 4, "Fox profile must render its quick facts")
+  assert(article.css(".article-contents a").length >= 7, "Article must render its Markdown table of contents")
+  assert(article.at_css(".article-photo figcaption").text.include?("NPS / Neal Herbert"), "Photo attribution is missing")
+  assert(article.css(".article-photo img, .field-illustration img").length == 2, "Article must include its photograph and identification illustration")
+  assert(article.css(".prose").first.text.split.length >= 600, "Red Fox must be a complete article, not a placeholder")
+  puts "Meet the Foxes cards, article content, photo credits, breadcrumbs, and cross-page navigation passed."
 end
 
 check_site(File.join(ROOT, "_site"))
+check_fox_pages(File.join(ROOT, "_site"))
 template = File.read(File.join(ROOT, "_templates", "page.md"))
 metadata = YAML.safe_load(template.split("---", 3)[1])
 assert(metadata.fetch("breadcrumbs").first.fetch("url") == "/foxes/", "Page starter has invalid breadcrumbs")
@@ -83,26 +104,38 @@ Dir.mktmpdir("allaboutfoxes-check-") do |temporary|
   source = File.join(temporary, "source")
   destination = File.join(temporary, "output")
   FileUtils.mkdir_p(source)
-  %w[_config.yml _layouts _includes _data assets index.html 404.html robots.txt CNAME].each do |path|
+	%w[_config.yml _layouts _includes _data assets foxes index.html 404.html robots.txt CNAME].each do |path|
 	FileUtils.cp_r(File.join(ROOT, path), source)
   end
-  FileUtils.mkdir_p(File.join(source, "foxes", "red-fox"))
-	parent_metadata = { "title" => "Foxes of the world", "description" => "Meet the fox family." }
-  child_metadata = { "title" => "Red fox", "description" => "Meet the red fox.", "breadcrumbs" => [{ "title" => "Foxes of the world", "url" => "/foxes/" }] }
-  File.write(File.join(source, "foxes", "index.md"), parent_metadata.to_yaml + "---\nHere is our **fox field guide**.\n")
-  File.write(File.join(source, "foxes", "red-fox", "index.md"), child_metadata.to_yaml + "---\nA red fox has a bushy tail.\n")
+	FileUtils.mkdir_p(File.join(source, "test-section", "child"))
+  parent_metadata = { "title" => "Test section", "description" => "A temporary section." }
+  child_metadata = { "title" => "Test child", "description" => "A temporary child.", "breadcrumbs" => [{ "title" => "Test section", "url" => "/test-section/" }] }
+  File.write(File.join(source, "test-section", "index.md"), parent_metadata.to_yaml + "---\nHere is our **fox field guide**.\n")
+  File.write(File.join(source, "test-section", "child", "index.md"), child_metadata.to_yaml + "---\nA temporary nested page.\n")
+  fox_metadata = YAML.safe_load(File.read(File.join(source, "foxes", "red-fox", "index.md")).split("---", 3)[1])
+  { "test-fox" => true, "draft-fox" => false }.each do |name, published|
+	directory = File.join(source, "foxes", name)
+	FileUtils.mkdir_p(directory)
+	data = fox_metadata.merge("title" => name, "nav_order" => 2, "published" => published)
+	File.write(File.join(directory, "index.md"), data.to_yaml + "---\nA temporary fox profile.\n")
+  end
   navigation_path = File.join(source, "_data", "navigation.yml")
   navigation = YAML.load_file(navigation_path)
-  navigation << { "title" => "Foxes", "url" => "/foxes/", "children" => [{ "title" => "Red fox", "url" => "/foxes/red-fox/" }] }
+	navigation << { "title" => "Test section", "url" => "/test-section/", "children" => [{ "title" => "Test child", "url" => "/test-section/child/" }] }
   File.write(navigation_path, navigation.to_yaml)
   config = Jekyll.configuration("source" => source, "destination" => destination, "baseurl" => "/preview", "quiet" => true)
   Jekyll::Site.new(config).process
   check_site(destination, baseurl: "/preview")
-  child = Nokogiri::HTML(File.read(File.join(destination, "foxes", "red-fox", "index.html")))
-  assert(child.at_css(".nav-children a[aria-current='page']")&.[]("href") == "/preview/foxes/red-fox/", "Nested navigation did not render the active child")
-  assert(child.at_css(".breadcrumbs a[href='/preview/foxes/']"), "Parent breadcrumb did not render")
-	assert(child.at_css("link[rel='canonical']")&.[]("href") == "https://www.allaboutfoxes.com/preview/foxes/red-fox/", "Nested canonical URL is incorrect")
-  parent = Nokogiri::HTML(File.read(File.join(destination, "foxes", "index.html")))
+	check_fox_pages(destination, baseurl: "/preview")
+  child = Nokogiri::HTML(File.read(File.join(destination, "test-section", "child", "index.html")))
+  assert(child.at_css(".nav-children a[aria-current='page']")&.[]("href") == "/preview/test-section/child/", "Nested navigation did not render the active child")
+  assert(child.at_css(".breadcrumbs a[href='/preview/test-section/']"), "Parent breadcrumb did not render")
+  assert(child.at_css("link[rel='canonical']")&.[]("href") == "https://www.allaboutfoxes.com/preview/test-section/child/", "Nested canonical URL is incorrect")
+  parent = Nokogiri::HTML(File.read(File.join(destination, "test-section", "index.html")))
   assert(parent.at_css(".prose strong")&.text == "fox field guide", "Markdown content did not render")
+	section = Nokogiri::HTML(File.read(File.join(destination, "foxes", "index.html")))
+  cards = section.css(".species-card").map { |card| card["href"] }
+  assert(cards == ["/preview/foxes/red-fox/", "/preview/foxes/test-fox/"], "Section must automatically list published articles in nav_order and exclude drafts")
+  assert(!File.exist?(File.join(destination, "foxes", "draft-fox", "index.html")), "Draft article was published")
   puts "Nested Markdown pages, breadcrumbs, recursive navigation, active links, and subpath hosting passed."
 end

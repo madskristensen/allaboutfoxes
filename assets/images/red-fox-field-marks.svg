@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" fill="none">
+  <rect width="960" height="500" rx="20" fill="#edf0e6"/>
+  <path d="M60 418h840" stroke="#c9d1be" stroke-width="2"/>
+  <ellipse cx="466" cy="402" rx="297" ry="16" fill="#dce3d1"/>
+  <path d="M560 250c65-38 142-41 202-9 57 30 97 88 112 135-74 40-164 16-221-35l-82-24Z" fill="#b6512d"/>
+  <path d="M806 282c30 26 54 59 68 94-31 18-72 23-107 16l-18-53q41-14 57-57Z" fill="#fff6e7"/>
+  <path d="M279 230c49-18 90-34 150-27 62 8 112 22 168 64l-20 82-62 14-104-12-96-21-43-42Z" fill="#c46134"/>
+  <path d="m502 319 41 7 7 64 18 11h-55l-9-39-23-18Z" fill="#a84b2b"/>
+  <path d="m513 373 36 2 1 15 18 11h-55Z" fill="#543e32"/>
+  <path d="m348 300 40 18-26 62 10 21h-51l4-36Z" fill="#a84b2b"/>
+  <path d="m325 370 39 5-2 5 10 21h-51Z" fill="#543e32"/>
+  <path d="m558 301 43-7-3 72 20 34h-48l-20-45Z" fill="#cf6d3a"/>
+  <path d="m561 374 40-3 17 29h-48Z" fill="#543e32"/>
+  <path d="m296 291 42 4-22 82 4 24h-48l4-50Z" fill="#cf6d3a"/>
+  <path d="m274 373 42 0 4 28h-48Z" fill="#543e32"/>
+  <path d="m232 165 17-74 53 86 34 50-38 80-71-17-74-48 63-30Z" fill="#d5743f"/>
+  <path d="m253 120 29 53-37 6Z" fill="#624333"/>
+  <path d="m299 180 32-56 12 102-25 22Z" fill="#bc582f"/>
+  <path d="m328 147 8 58-23-18Z" fill="#624333"/>
+  <path d="m154 242 73 17 60-22 11 70-71-17Z" fill="#fff6e7"/>
+  <path d="m149 238 20-5-5 15Z" fill="#243e32"/>
+  <path d="m223 216 12 4" stroke="#243e32" stroke-width="5" stroke-linecap="round"/>
+  <path d="m176 256 24 11" stroke="#704b36" stroke-width="2" stroke-linecap="round"/>
+  <g stroke="#657e61" stroke-width="2" stroke-dasharray="4 5">
+    <path d="M249 100V60h120"/>
+    <path d="m300 392-75 55H93"/>
+    <path d="m837 351 34-193h-68"/>
+  </g>
+  <g fill="#a94727"><circle cx="249" cy="100" r="5"/><circle cx="300" cy="392" r="5"/><circle cx="837" cy="351" r="5"/></g>
+  <g fill="#243e32" font-family="Georgia, serif" font-size="24">
+    <text x="380" y="67">Triangular ears</text>
+    <text x="71" y="480">Dark lower legs</text>
+    <text x="634" y="129">A bushy tail,</text>
+    <text x="634" y="156">often tipped white</text>
+  </g>
+  <text x="45" y="45" fill="#536353" font-family="Verdana, sans-serif" font-size="12" letter-spacing="2">THE RED FOX / LOOK FOR THE CLUES</text>
+</svg>

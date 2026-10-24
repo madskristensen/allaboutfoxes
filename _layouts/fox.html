@@ -1,0 +1,21 @@
+---
+layout: page
+---
+<p class="scientific-name article-scientific-name">{{ page.scientific_name | escape }}</p>
+<figure class="article-photo">
+  <img src="{{ page.image | relative_url }}" width="960" height="481" alt="{{ page.image_alt | escape }}" fetchpriority="high">
+  <figcaption>{{ page.image_caption | escape }} <span>Photo: <a href="{{ page.image_source | escape }}">{{ page.image_credit | escape }}</a> (public domain).</span></figcaption>
+</figure>
+<section class="fox-profile" aria-labelledby="profile-heading">
+  <h2 id="profile-heading">The pocket field guide</h2>
+  <dl class="quick-facts">
+    {% for fact in page.quick_facts %}
+    <div><dt>{{ fact.label | escape }}</dt><dd>{{ fact.value | escape }}</dd></div>
+    {% endfor %}
+  </dl>
+</section>
+{{ content }}
+<nav class="explore-links" aria-label="Keep exploring">
+  <a href="{{ page.section | relative_url }}">&larr; Back to Meet the Foxes</a>
+  <a href="{{ '/' | relative_url }}">Back to the den &rarr;</a>
+</nav>

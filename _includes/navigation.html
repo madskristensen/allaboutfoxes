@@ -1,7 +1,7 @@
 <ul class="{% if include.nested %}nav-children{% else %}nav-list{% endif %}">
   {% for entry in include.items %}
   <li>
-    <a href="{{ entry.url | relative_url }}"{% if page.url == entry.url %} aria-current="page"{% endif %}>{{ entry.title | escape }}</a>
+    <a href="{{ entry.url | relative_url }}"{% if page.url == entry.url %} aria-current="page"{% elsif page.section == entry.url %} class="is-section-active"{% endif %}>{{ entry.title | escape }}</a>
     {% if entry.children %}
       {% include navigation.html items=entry.children nested=true %}
     {% endif %}

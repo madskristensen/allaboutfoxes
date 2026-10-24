@@ -1,0 +1,28 @@
+---
+layout: page
+---
+{{ content }}
+<section class="species-section" aria-labelledby="species-heading">
+  <p class="eyebrow">Open a field note</p>
+  <h2 id="species-heading">Which fox will you meet first?</h2>
+  <div class="species-grid">
+    {% assign articles = site.pages | where: 'section', page.url | where_exp: 'article', 'article.published != false' | sort: 'nav_order' %}
+    {% for fox in articles %}
+    <a class="species-card" href="{{ fox.url | relative_url }}">
+      <div class="species-card-image"><img src="{{ fox.image | relative_url }}" width="960" height="481" alt="{{ fox.image_alt | escape }}" loading="lazy"></div>
+      <div class="species-card-copy">
+        <p class="eyebrow">{{ fox.eyebrow | escape }}</p>
+        <h3>{{ fox.title | escape }}</h3>
+        <p class="scientific-name">{{ fox.scientific_name | escape }}</p>
+        <p>{{ fox.description | escape }}</p>
+        <span class="card-link">Meet the {{ fox.title | downcase | escape }} <span aria-hidden="true">&rarr;</span></span>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+  <p class="source-note">Each field note is a little trail of its own. We'll add more as our fox library grows.</p>
+</section>
+<nav class="explore-links" aria-label="Keep exploring">
+  <a href="{{ '/' | relative_url }}">&larr; Back to the den</a>
+  <a href="{{ '/#fox-facts' | relative_url }}">Explore the homepage fox facts &rarr;</a>
+</nav>
