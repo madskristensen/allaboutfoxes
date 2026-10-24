@@ -6,8 +6,7 @@ eyebrow: Field note / No. 001
 scientific_name: Vulpes vulpes
 section: /foxes/
 nav_order: 1
-image: /assets/images/red-fox-yellowstone.jpg
-image_alt: A red fox with pointed ears and dark legs stands in the snow, looking back over its shoulder in Yellowstone National Park.
+image: { path: /assets/images/red-fox-yellowstone.jpg, width: 960, height: 481, alt: "A red fox with pointed ears and dark legs stands in the snow, looking back over its shoulder in Yellowstone National Park." }
 image_caption: A red fox pauses during a winter hunt in Yellowstone National Park.
 image_credit: NPS / Neal Herbert
 image_source: https://www.nps.gov/yell/learn/nature/red-fox.htm

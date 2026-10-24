@@ -26,6 +26,7 @@
 - Write clear, engaging explanations for children without sacrificing factual accuracy. Cite reliable wildlife sources.
 - Use original images or images licensed for publication, with appropriate credits and descriptive alternative text. Decorative images should have empty alt text.
 - Store images locally under `assets/images` and size them appropriately for the web. Prefer captions for educational context and credits.
+- Keep `jekyll-seo-tag` as the single source of social metadata. Pages inherit a 1200-by-630 PNG sharing card; profile `image` objects supply `path`, actual `width` and `height`, and descriptive `alt` text for both displayed photos and sharing previews. Do not invent social handles or add duplicate Open Graph/Twitter tags.
 - Do not publish private information about Wesley or other children.
 - Keep wildlife guidance safe: observe from a distance and do not present wild foxes as pets.
 

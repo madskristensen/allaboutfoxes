@@ -9,7 +9,7 @@ layout: page
     {% assign articles = site.pages | where: 'section', page.url | where_exp: 'article', 'article.published != false' | sort: 'nav_order' %}
     {% for fox in articles %}
     <a class="species-card" href="{{ fox.url | relative_url }}">
-      <div class="species-card-image"><img src="{{ fox.image | relative_url }}" width="960" height="481" alt="{{ fox.image_alt | escape }}" loading="lazy"></div>
+      <div class="species-card-image"><img src="{{ fox.image.path | relative_url }}" width="{{ fox.image.width }}" height="{{ fox.image.height }}" alt="{{ fox.image.alt | escape }}" loading="lazy"></div>
       <div class="species-card-copy">
         <p class="eyebrow">{{ fox.eyebrow | escape }}</p>
         <h3>{{ fox.title | escape }}</h3>

@@ -111,8 +111,9 @@ Use `foxes\red-fox\index.md` as the complete working example. Create a new
 directory such as `foxes\arctic-fox` and write its `index.md`. Keep `layout: fox`
 and `section: /foxes/`, then update the title, description, scientific name,
 `nav_order`, breadcrumbs, and all image and quick-fact fields for that species.
-The profile currently uses a 960-by-481 photo frame; prepare new profile photos
-at that size or update the image dimensions in the shared layout as needed.
+Use an `image` object with `path`, `width`, `height`, and descriptive `alt` text,
+as in the Red Fox example. These fields drive both the displayed photo and
+social-sharing metadata. Set dimensions to the photo's actual pixel size.
 
 The section layout automatically lists published pages whose `section` matches
 the landing page URL, sorted by `nav_order`. Do not add each fox to the header:
@@ -134,6 +135,35 @@ The [NPS image-use policy](https://www.nps.gov/aboutus/disclaimer.htm) identifie
 NPS-created U.S. Government works as public domain unless otherwise noted.
 The downloaded image is 960 by 481 pixels. No NPS logo is used and no endorsement
 is implied. The fox field-marks SVG is an original illustration, not a photograph.
+
+## Social sharing previews
+
+The existing `jekyll-seo-tag` plugin is the single source for Open Graph,
+Twitter/X cards, canonical links, and JSON-LD. Do not add duplicate tags to
+layouts. Each page gets its own title, description, and absolute HTTPS URL.
+No Twitter handles or Facebook app IDs are configured because the site does
+not have verified social accounts to identify.
+
+Pages without their own image inherit the original woodland card at
+`assets/images/social-card.png` (1200 by 630 pixels). Its editable source is
+`assets/images/social-card.svg`; after editing it, export a PNG at exactly
+1200 by 630 pixels and commit both files. Social crawlers need the raster
+image, not the SVG. The Red Fox page instead uses its credited local photograph.
+
+To override the default, set an `image` object in front matter with `path`,
+`width`, `height`, and `alt`. Use a local PNG or JPEG under 5 MB, at least
+600 pixels wide, and approximately 1.9:1 to 2:1. Prefer 1200 by 630 for new
+cards. Keep text and key subjects clear of the edges, since platforms crop
+previews differently. For fox profiles, this image also appears in the article
+and its section card, so preserve the photo credit fields.
+
+The site checker verifies unique tags, descriptive alt text, matching
+Open Graph/Twitter values, fallback and per-page images, real image dimensions,
+and subpath-aware URLs. It also tests special characters in titles/descriptions.
+After deployment, inspect the public URL in Facebook's Sharing Debugger or
+LinkedIn's Post Inspector if an old preview persists; platforms cache previews
+and may need to fetch the page again. No sharing scripts, tracking, or external
+image service is needed.
 
 ## GitHub publishing
 

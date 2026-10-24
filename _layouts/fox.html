@@ -3,7 +3,7 @@ layout: page
 ---
 <p class="scientific-name article-scientific-name">{{ page.scientific_name | escape }}</p>
 <figure class="article-photo">
-  <img src="{{ page.image | relative_url }}" width="960" height="481" alt="{{ page.image_alt | escape }}" fetchpriority="high">
+  <img src="{{ page.image.path | relative_url }}" width="{{ page.image.width }}" height="{{ page.image.height }}" alt="{{ page.image.alt | escape }}" fetchpriority="high">
   <figcaption>{{ page.image_caption | escape }} <span>Photo: <a href="{{ page.image_source | escape }}">{{ page.image_credit | escape }}</a> (public domain).</span></figcaption>
 </figure>
 <section class="fox-profile" aria-labelledby="profile-heading">

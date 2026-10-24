@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#faf7ef"/>
+  <rect x="28" y="28" width="1144" height="574" rx="16" fill="none" stroke="#d9dccb" stroke-width="2"/>
+  <text x="80" y="141" fill="#536353" font-family="Verdana, sans-serif" font-size="17" letter-spacing="3">A CURIOUS KID'S FIELD GUIDE</text>
+  <g font-family="Georgia, serif" font-size="84" fill="#243e32">
+    <text x="75" y="267">All About</text>
+    <text x="75" y="361" fill="#a94727">Foxes</text>
+  </g>
+  <g font-family="Verdana, sans-serif" font-size="24" fill="#536353">
+    <text x="80" y="437">A little wild.</text>
+    <text x="80" y="475">A lot to discover.</text>
+  </g>
+  <text x="80" y="552" fill="#243e32" font-family="Verdana, sans-serif" font-size="17">www.allaboutfoxes.com</text>
+  <defs><clipPath id="woodland"><path d="M640 550V284a230 230 0 0 1 460 0v266Z"/></clipPath></defs>
+  <g clip-path="url(#woodland)">
+    <path fill="#e7e7d1" d="M630 45h480v510H630Z"/>
+    <circle cx="966" cy="178" r="55" fill="#e7b56d"/>
+    <path d="M610 410q110-115 225-35t290-35v230H610Z" fill="#a6b9a0"/>
+    <g stroke="#7e977e" stroke-width="11"><path d="m687 50 15 445m360-410-14 360"/><path d="m696 286 57-61m-58-30-53-42m410 92-55-65m55 13 54-52" stroke-width="6"/></g>
+    <path d="M620 486q130-48 255-12t245-12v100H620Z" fill="#769579"/>
+    <ellipse cx="873" cy="521" rx="164" ry="17" fill="#496e56" opacity=".3"/>
+    <path d="M886 454c82 22 103-37 139-82 25 75-10 151-113 146l-56-20Z" fill="#aa4829"/>
+    <path d="M1001 402q11-15 24-30c13 39 10 80-15 108l-35-21q32-24 26-57Z" fill="#fff0d5"/>
+    <path d="M826 331c-43 53-47 107-35 155l-19 30h134c33-62 14-128-33-178Z" fill="#c35e32"/>
+    <path d="M837 345c-23 28-24 103-5 143h38c15-53 10-100-13-139Z" fill="#f6dfb9"/>
+    <path d="m796 483-7 33h45l-6-32zm65 0 2 33h43l-14-33Z" fill="#663f31"/>
+    <path d="m779 219 61 43q25-9 47 0l57-43-9 101-79 68-78-68Z" fill="#d06b38"/>
+    <path d="m792 240 35 28-35 19zm138 0-31 28 29 19Z" fill="#684536"/>
+    <path d="M780 307q43-9 76 56 35-65 78-56l-78 81Z" fill="#fff1d7"/>
+    <path d="m845 363 22 0-11 12Z" fill="#293e33"/>
+    <path d="m812 309 13 4m62 0 13-4" stroke="#293e33" stroke-width="4" stroke-linecap="round"/>
+    <g stroke="#315e49" stroke-width="4" stroke-linecap="round"><path d="M730 545q3-44-20-75m21 59-26-11m23-4-23-17m26 31 17-23m285 40q-3-45 25-76m-25 56 25-12m-22-3 26-18m-29 32-16-21"/></g>
+  </g>
+  <path d="M626 289a244 244 0 0 1 488 0" stroke="#244c3d" stroke-dasharray="3 8" opacity=".3" fill="none"/>
+</svg>

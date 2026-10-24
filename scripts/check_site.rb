@@ -12,6 +12,45 @@ def assert(condition, message)
   raise message unless condition
 end
 
+def check_social_metadata(document, file, root, baseurl)
+  values = {}
+  %w[og:title og:description og:type og:url og:site_name og:locale og:image og:image:width og:image:height og:image:alt twitter:card twitter:title twitter:description twitter:image twitter:image:alt].each do |key|
+	tags = document.css("head meta[property='#{key}'], head meta[name='#{key}']")
+	assert(tags.length == 1, "#{file}: expected exactly one #{key} tag")
+	values[key] = tags.first["content"]
+	assert(!values[key].to_s.strip.empty?, "#{file}: empty #{key}")
+  end
+  assert(document.css("head link[rel='canonical']").length == 1, "#{file}: duplicate canonical URL")
+  assert(values["og:url"] == document.at_css("link[rel='canonical']")["href"], "#{file}: sharing URL must match canonical URL")
+  assert(values["og:site_name"] == "All About Foxes", "#{file}: incorrect sharing site name")
+  assert(values["og:locale"] == "en_US", "#{file}: incorrect sharing locale")
+  assert(values["twitter:card"] == "summary_large_image", "#{file}: expected a large-image Twitter card")
+  %w[title description image image:alt].each do |key|
+	assert(values["twitter:#{key}"] == values["og:#{key}"], "#{file}: Twitter and Open Graph #{key} disagree")
+  end
+  assert(values["og:description"] == document.at_css("meta[name='description']")["content"], "#{file}: sharing description differs from page description")
+  assert(document.css("meta[name='twitter:site'], meta[name='twitter:creator']").empty?, "#{file}: do not invent social account handles")
+
+  prefix = "https://www.allaboutfoxes.com#{baseurl}/"
+  assert(values["og:image"].start_with?(prefix), "#{file}: sharing image must use an absolute HTTPS URL with the correct baseurl")
+  image_path = root.join(values["og:image"].delete_prefix(prefix))
+  assert(image_path.file?, "#{file}: sharing image does not exist")
+  assert(%w[.png .jpg .jpeg].include?(image_path.extname.downcase), "#{file}: use a PNG or JPEG sharing image, not SVG")
+  assert(image_path.size < 5 * 1024 * 1024, "#{file}: sharing image must be smaller than 5 MB")
+  bytes = image_path.binread
+  dimensions = if bytes.start_with?("\x89PNG\r\n\x1a\n".b)
+				 bytes.byteslice(16, 8).unpack("N2")
+			   else
+				 frame = bytes.match(/\xFF[\xC0-\xC3].{3}(.{4})/mn)
+				 assert(frame, "#{file}: JPEG dimensions could not be read")
+				 frame[1].unpack("n2").reverse
+			   end
+  width = Integer(values["og:image:width"])
+  height = Integer(values["og:image:height"])
+  assert(dimensions == [width, height], "#{file}: image metadata does not match actual pixel dimensions")
+  assert(width >= 600 && height >= 300 && (1.8..2.1).cover?(width.fdiv(height)), "#{file}: sharing image must be a large landscape image")
+end
+
 def check_site(destination, baseurl: "")
   root = Pathname.new(destination).expand_path
   pages = Dir.glob(File.join(destination, "**", "*.html"))
@@ -19,6 +58,7 @@ def check_site(destination, baseurl: "")
 
   pages.each do |file|
 	document = Nokogiri::HTML(File.read(file))
+	check_social_metadata(document, file, root, baseurl)
 	assert(document.css("h1").length == 1, "#{file}: expected exactly one h1")
 	assert(document.at_css("html[lang='en']"), "#{file}: missing document language")
 	assert(document.at_css("title")&.text&.length.to_i > 0, "#{file}: missing title")
@@ -85,6 +125,9 @@ def check_fox_pages(destination, baseurl: "")
   assert(article.at_css(".article-photo figcaption").text.include?("NPS / Neal Herbert"), "Photo attribution is missing")
   assert(article.css(".article-photo img, .field-illustration img").length == 2, "Article must include its photograph and identification illustration")
   assert(article.css(".prose").first.text.split.length >= 600, "Red Fox must be a complete article, not a placeholder")
+	assert(home.at_css("meta[property='og:image']")["content"] == "https://www.allaboutfoxes.com#{baseurl}/assets/images/social-card.png", "Homepage must use the default social card")
+  assert(section.at_css("meta[property='og:image']")["content"] == home.at_css("meta[property='og:image']")["content"], "Section must inherit the default social card")
+  assert(article.at_css("meta[property='og:image']")["content"] == "https://www.allaboutfoxes.com#{baseurl}/assets/images/red-fox-yellowstone.jpg", "Article must override the default card with its own photograph")
   puts "Meet the Foxes cards, article content, photo credits, breadcrumbs, and cross-page navigation passed."
 end
 
@@ -109,7 +152,7 @@ Dir.mktmpdir("allaboutfoxes-check-") do |temporary|
   end
 	FileUtils.mkdir_p(File.join(source, "test-section", "child"))
   parent_metadata = { "title" => "Test section", "description" => "A temporary section." }
-  child_metadata = { "title" => "Test child", "description" => "A temporary child.", "breadcrumbs" => [{ "title" => "Test section", "url" => "/test-section/" }] }
+  child_metadata = { "title" => 'Test & "child" &lt;guide&gt;', "description" => 'A "fox" & its &lt;habitat&gt;.', "breadcrumbs" => [{ "title" => "Test section", "url" => "/test-section/" }] }
   File.write(File.join(source, "test-section", "index.md"), parent_metadata.to_yaml + "---\nHere is our **fox field guide**.\n")
   File.write(File.join(source, "test-section", "child", "index.md"), child_metadata.to_yaml + "---\nA temporary nested page.\n")
   fox_metadata = YAML.safe_load(File.read(File.join(source, "foxes", "red-fox", "index.md")).split("---", 3)[1])
@@ -128,6 +171,8 @@ Dir.mktmpdir("allaboutfoxes-check-") do |temporary|
   check_site(destination, baseurl: "/preview")
 	check_fox_pages(destination, baseurl: "/preview")
   child = Nokogiri::HTML(File.read(File.join(destination, "test-section", "child", "index.html")))
+  assert(child.at_css("meta[property='og:title']")["content"] == "Test & \u201cchild\u201d <guide>", "Sharing title must safely preserve quotes, ampersands, and encoded angle brackets after Markdown formatting")
+  assert(child.at_css("meta[property='og:description']")["content"] == "A \u201cfox\u201d & its <habitat>.", "Sharing description must safely preserve special characters after Markdown formatting")
   assert(child.at_css(".nav-children a[aria-current='page']")&.[]("href") == "/preview/test-section/child/", "Nested navigation did not render the active child")
   assert(child.at_css(".breadcrumbs a[href='/preview/test-section/']"), "Parent breadcrumb did not render")
   assert(child.at_css("link[rel='canonical']")&.[]("href") == "https://www.allaboutfoxes.com/preview/test-section/child/", "Nested canonical URL is incorrect")

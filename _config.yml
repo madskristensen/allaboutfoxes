@@ -3,6 +3,7 @@ description: A little place for big discoveries about foxes. A wildlife learning
 url: "https://www.allaboutfoxes.com"
 baseurl: ""
 lang: en
+locale: en_US
 timezone: Etc/UTC
 markdown: kramdown
 permalink: pretty
@@ -17,6 +18,7 @@ defaults:
       path: ""
     values:
       layout: page
+      image: { path: /assets/images/social-card.png, width: 1200, height: 630, alt: "All About Foxes. A curious kid's field guide, with an illustrated red fox among woodland trees." }
 exclude:
   - .vs
   - _templates
