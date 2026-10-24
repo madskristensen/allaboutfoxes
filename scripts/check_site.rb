@@ -24,6 +24,7 @@ def check_site(destination, baseurl: "")
 	assert(document.at_css("title")&.text&.length.to_i > 0, "#{file}: missing title")
 	assert(document.at_css("meta[name='description']"), "#{file}: missing description")
 	assert(document.at_css("link[rel='canonical']"), "#{file}: missing canonical URL")
+	assert(document.at_css("link[rel='canonical']")["href"].start_with?("https://www.allaboutfoxes.com#{baseurl}/"), "#{file}: canonical URL must use the www domain")
 	document.css("img").each do |image|
 	  assert(image.key?("alt"), "#{file}: image missing alt attribute")
 	end
@@ -57,7 +58,10 @@ def check_site(destination, baseurl: "")
   %w[CNAME robots.txt sitemap.xml assets/css/style.css].each do |path|
 	assert(root.join(path).file?, "Missing output: #{path}")
   end
-  assert(root.join("CNAME").read.strip == "allaboutfoxes.com", "Incorrect custom domain")
+	assert(root.join("CNAME").read.strip == "www.allaboutfoxes.com", "Incorrect custom domain")
+  assert(root.join("robots.txt").read.include?("Sitemap: https://www.allaboutfoxes.com#{baseurl}/sitemap.xml"), "Robots sitemap URL must use the www domain")
+  sitemap = Nokogiri::XML(root.join("sitemap.xml").read)
+  assert(sitemap.xpath("//*[local-name()='loc']").all? { |location| location.text.start_with?("https://www.allaboutfoxes.com#{baseurl}/") }, "Sitemap URLs must use the www domain")
 	%w[Gemfile Gemfile.lock README.md run.cmd scripts/check_site.rb .github/workflows/pages.yml].each do |path|
 	assert(!root.join(path).exist?, "Source-only file leaked into site: #{path}")
   end
@@ -97,7 +101,7 @@ Dir.mktmpdir("allaboutfoxes-check-") do |temporary|
   child = Nokogiri::HTML(File.read(File.join(destination, "foxes", "red-fox", "index.html")))
   assert(child.at_css(".nav-children a[aria-current='page']")&.[]("href") == "/preview/foxes/red-fox/", "Nested navigation did not render the active child")
   assert(child.at_css(".breadcrumbs a[href='/preview/foxes/']"), "Parent breadcrumb did not render")
-  assert(child.at_css("link[rel='canonical']")&.[]("href") == "https://allaboutfoxes.com/preview/foxes/red-fox/", "Nested canonical URL is incorrect")
+	assert(child.at_css("link[rel='canonical']")&.[]("href") == "https://www.allaboutfoxes.com/preview/foxes/red-fox/", "Nested canonical URL is incorrect")
   parent = Nokogiri::HTML(File.read(File.join(destination, "foxes", "index.html")))
   assert(parent.at_css(".prose strong")&.text == "fox field guide", "Markdown content did not render")
   puts "Nested Markdown pages, breadcrumbs, recursive navigation, active links, and subpath hosting passed."

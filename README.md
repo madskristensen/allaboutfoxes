@@ -1,7 +1,7 @@
 # All About Foxes
 
 A small wildlife field guide for curious kids, made for Wesley. Built with
-Jekyll and deployed to GitHub Pages at **https://allaboutfoxes.com**.
+Jekyll and deployed to GitHub Pages at **https://www.allaboutfoxes.com**.
 
 The first edition has just a front page (plus a friendly 404). There are no
 empty "coming soon" pages, external fonts, trackers, cookies, JavaScript, or
@@ -118,7 +118,7 @@ git push origin main
 1. On the repository, open **Settings > Pages** and set **Build and deployment >
    Source** to **GitHub Actions**. Enable Actions if your account restricts them.
 
-2. Set the **Custom domain** to `allaboutfoxes.com` in those Pages settings
+2. Set the **Custom domain** to `www.allaboutfoxes.com` in those Pages settings
    **before changing DNS**. The included `CNAME` records the intended domain,
    but custom-workflow deployments require this setting: the file alone does
    not configure it.
@@ -154,7 +154,8 @@ At your domain registrar or DNS provider, configure:
 Remove conflicting parking/forwarding records for `@` and `www`, but preserve
 unrelated mail and verification records. Do not use wildcard records. The `www`
 CNAME points to the **account hostname**, not a URL or repository path. GitHub
-redirects `www.allaboutfoxes.com` to the configured apex domain.
+redirects `allaboutfoxes.com` to the configured primary domain,
+`www.allaboutfoxes.com`. Keep the apex A records so that redirect works.
 
 IPv6 is optional; if existing AAAA records point elsewhere, remove those or
 replace them with all four GitHub Pages IPv6 addresses from the official guide.
