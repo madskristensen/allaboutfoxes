@@ -61,6 +61,7 @@ These test pages are never included in the published site.
 | `assets/images/` | Original SVG artwork and a credited NPS photograph |
 | `.github/workflows/pages.yml` | Build, validate, and deploy |
 | `scripts/check_site.rb` | Build-output and page-structure checks |
+| `llms.txt` | Automatically generated content guide for AI tools |
 
 ## Add pages and subpages
 
@@ -165,6 +166,19 @@ After deployment, inspect the public URL in Facebook's Sharing Debugger or
 LinkedIn's Post Inspector if an old preview persists; platforms cache previews
 and may need to fetch the page again. No sharing scripts, tracking, or external
 image service is needed.
+
+## AI content guide
+
+`/llms.txt` is an optional Markdown-format guide for AI tools. Jekyll generates
+it from published pages' titles, descriptions, and absolute canonical URLs;
+new articles appear automatically. Error pages, drafts, and utility files are
+excluded. Each HTML page has a `rel="describedby"` link to help discover it.
+
+Keep page titles and descriptions meaningful. The checker verifies the guide
+at the domain root and under `/preview`, checks its links against the sitemap,
+and ensures drafts stay out. This does not add JavaScript, WebMCP, an external
+service, or a guarantee of improved search rankings. It is not a crawler access
+policy or an image license; retain `robots.txt` and individual image credits.
 
 ## GitHub publishing
 

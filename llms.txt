@@ -1,0 +1,20 @@
+---
+layout: null
+sitemap: false
+---
+# {{ site.title }}
+
+> A kid-friendly wildlife field guide about foxes, their habitats, behavior, and how to observe them safely.
+
+The links below lead to published website pages. Wildlife articles include
+sources and image credits. Watch wild foxes from a distance; do not feed them
+or treat them as pets. This file is a content guide, not a replacement for
+robots.txt or a statement of permission to reuse photographs.
+
+## Pages
+{% assign guide_pages = site.pages | sort: 'url' -%}
+{% for entry in guide_pages -%}
+{% if entry.title and entry.sitemap != false and entry.published != false -%}
+- [{{ entry.title | strip_html | normalize_whitespace | replace: '[', '\[' | replace: ']', '\]' }}]({{ entry.url | absolute_url }}): {{ entry.description | default: site.description | strip_html | normalize_whitespace }}
+{% endif -%}
+{% endfor -%}

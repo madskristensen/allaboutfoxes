@@ -64,6 +64,7 @@ def check_site(destination, baseurl: "")
 	check_social_metadata(document, file, root, baseurl)
 	brand = document.at_css("a.brand")
 	assert(brand && !brand.key?("aria-label") && !brand.key?("aria-labelledby"), "#{file}: brand link must use its visible text as its accessible name")
+	assert(document.at_css("link[rel='describedby']")&.[]("href") == "#{baseurl}/llms.txt", "#{file}: missing llms.txt discovery link")
 	assert(document.css("h1").length == 1, "#{file}: expected exactly one h1")
 	assert(document.at_css("html[lang='en']"), "#{file}: missing document language")
 	assert(document.at_css("title")&.text&.length.to_i > 0, "#{file}: missing title")
@@ -100,13 +101,22 @@ def check_site(destination, baseurl: "")
 	end
   end
 
-  %w[CNAME robots.txt sitemap.xml assets/css/style.css].each do |path|
+	%w[CNAME robots.txt sitemap.xml llms.txt assets/css/style.css].each do |path|
 	assert(root.join(path).file?, "Missing output: #{path}")
   end
 	assert(root.join("CNAME").read.strip == "www.allaboutfoxes.com", "Incorrect custom domain")
   assert(root.join("robots.txt").read.include?("Sitemap: https://www.allaboutfoxes.com#{baseurl}/sitemap.xml"), "Robots sitemap URL must use the www domain")
   sitemap = Nokogiri::XML(root.join("sitemap.xml").read)
   assert(sitemap.xpath("//*[local-name()='loc']").all? { |location| location.text.start_with?("https://www.allaboutfoxes.com#{baseurl}/") }, "Sitemap URLs must use the www domain")
+  guide = root.join("llms.txt").read
+  assert(guide.start_with?("# All About Foxes\n") || guide.start_with?("# All About Foxes\r\n"), "llms.txt must start with the site title, without YAML or an HTML layout")
+  assert(guide.include?("\n> A kid-friendly wildlife field guide"), "llms.txt is missing its summary")
+  assert(guide.include?("\n## Pages"), "llms.txt is missing its page list")
+  urls = guide.scan(/^\- \[.*\]\((https:\/\/[^)]+)\): .+$/).flatten
+  expected_urls = sitemap.xpath("//*[local-name()='loc']").map(&:text).select { |url| url.end_with?("/", ".html") }.sort
+  assert(urls.sort == expected_urls, "llms.txt must list each published content page exactly once and exclude drafts and utility files")
+  assert(!guide.include?("404.html") && !guide.include?("draft-fox"), "llms.txt must exclude error pages and drafts")
+  assert(!sitemap.to_xml.include?("/llms.txt"), "llms.txt must not appear as an article in the sitemap")
 	%w[Gemfile Gemfile.lock README.md run.cmd scripts/check_site.rb .github/workflows/pages.yml .github/copilot-instructions.md].each do |path|
 	assert(!root.join(path).exist?, "Source-only file leaked into site: #{path}")
   end
@@ -118,6 +128,9 @@ def check_fox_pages(destination, baseurl: "")
   section = Nokogiri::HTML(File.read(File.join(destination, "foxes", "index.html")))
   article = Nokogiri::HTML(File.read(File.join(destination, "foxes", "red-fox", "index.html")))
   assert(home.at_css(".hero .button")["href"] == "#{baseurl}/foxes/", "Homepage must link to Meet the Foxes")
+	arrow = home.at_css(".hero .button svg")
+  assert(arrow && arrow["stroke"] == "currentColor" && arrow["aria-hidden"] == "true" && arrow["focusable"] == "false", "Homepage button must use a decorative SVG arrow instead of a platform-dependent emoji")
+  assert(home.at_css(".hero .button").text.strip == "Meet the foxes", "Homepage button must not contain a Unicode emoji arrow")
   assert(section.at_css(".species-card[href='#{baseurl}/foxes/red-fox/']"), "Section must link to Red Fox")
   assert(section.at_css(".site-header a[aria-current='page']")["href"] == "#{baseurl}/foxes/", "Section navigation must mark its current page")
   assert(article.at_css(".site-header .is-section-active")["href"] == "#{baseurl}/foxes/", "Article must highlight its parent section")
@@ -152,7 +165,7 @@ Dir.mktmpdir("allaboutfoxes-check-") do |temporary|
   source = File.join(temporary, "source")
   destination = File.join(temporary, "output")
   FileUtils.mkdir_p(source)
-	%w[_config.yml _layouts _includes _data assets foxes index.html 404.html robots.txt CNAME].each do |path|
+	%w[_config.yml _layouts _includes _data assets foxes index.html 404.html robots.txt llms.txt CNAME].each do |path|
 	FileUtils.cp_r(File.join(ROOT, path), source)
   end
 	FileUtils.mkdir_p(File.join(source, "test-section", "child"))
