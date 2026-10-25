@@ -53,12 +53,17 @@ end
 
 def check_site(destination, baseurl: "")
   root = Pathname.new(destination).expand_path
+	Dir.glob(File.join(destination, "assets", "images", "*.svg")).each do |image|
+	Nokogiri::XML(File.read(image)) { |config| config.strict.nonet }
+  end
   pages = Dir.glob(File.join(destination, "**", "*.html"))
   assert(!pages.empty?, "No generated HTML found in #{destination}; run the Jekyll build first")
 
   pages.each do |file|
 	document = Nokogiri::HTML(File.read(file))
 	check_social_metadata(document, file, root, baseurl)
+	brand = document.at_css("a.brand")
+	assert(brand && !brand.key?("aria-label") && !brand.key?("aria-labelledby"), "#{file}: brand link must use its visible text as its accessible name")
 	assert(document.css("h1").length == 1, "#{file}: expected exactly one h1")
 	assert(document.at_css("html[lang='en']"), "#{file}: missing document language")
 	assert(document.at_css("title")&.text&.length.to_i > 0, "#{file}: missing title")

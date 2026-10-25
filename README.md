@@ -37,6 +37,7 @@ bundle exec ruby scripts\check_site.rb
 ```
 
 The checker validates generated HTML, local links and anchors, metadata, images,
+strict SVG XML, the logo link's accessible labeling,
 and source-file exclusions. It also builds temporary parent/child Markdown pages
 under a `/preview` base path to exercise recursive navigation and breadcrumbs.
 These test pages are never included in the published site.
