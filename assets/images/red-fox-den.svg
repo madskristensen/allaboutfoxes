@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="760" viewBox="0 0 960 760" fill="none" role="img" aria-labelledby="title description">
+  <title id="title">Inside a red fox den</title>
+  <desc id="description">A cutaway through a grassy bank shows three entrances connected by narrow, branching tunnels. A short side passage leads to a small side chamber, while the main passage reaches a larger nursery chamber holding a mother fox and five kits. This source-informed example brings the branches into view; it is not to scale or a map of one particular den. Real dens vary in shape and complexity.</desc>
+  <defs>
+    <pattern id="soil" width="64" height="48" patternUnits="userSpaceOnUse">
+      <path d="m12 18 7 3m26 16 6-2" stroke="#bda587" stroke-width="2" stroke-linecap="round" />
+      <circle cx="48" cy="9" r="2" fill="#bda587" />
+    </pattern>
+    <g id="kit">
+      <ellipse cx="0" cy="0" rx="25" ry="17" fill="#b6512d" />
+      <path d="M13 4c25-20 41-6 28 8-7 7-22 8-34 2" fill="#cf6d3a" />
+      <path d="M34-3c11-2 17 7 7 15l-9 4 2-10Z" fill="#fff6e7" />
+      <path d="m-26-5 1-24 16 14 15-11 3 25-18 15Z" fill="#cf6d3a" />
+      <path d="m-22-20 8 8-8 2m25-10-9 8 10 2" fill="#543e32" />
+      <path d="m-25 1 16 5 17-6-17 14Z" fill="#fff6e7" />
+      <path d="m-12 5 6 0-3 4Z" fill="#243e32" />
+      <path d="m-21-3 5 2m10-2 5-2" stroke="#243e32" stroke-width="2" stroke-linecap="round" />
+    </g>
+  </defs>
+  <rect width="960" height="760" rx="20" fill="#edf0e6" />
+  <text x="40" y="42" fill="#536353" font-family="Verdana, sans-serif" font-size="14" letter-spacing="2">THE RED FOX / UNDERGROUND EXPLORER</text>
+  <text x="40" y="90" fill="#243e32" font-family="Georgia, serif" font-size="36">Peek inside a den</text>
+  <path d="M32 286c105-10 181-69 307-75 134-7 185 15 302 12 126-3 206 20 287 37v420H32Z" fill="#d5c1a2" />
+  <path d="M32 286c105-10 181-69 307-75 134-7 185 15 302 12 126-3 206 20 287 37v420H32Z" fill="url(#soil)" />
+  <path d="M32 286c105-10 181-69 307-75 134-7 185 15 302 12 126-3 206 20 287 37" stroke="#657e61" stroke-width="14" />
+  <g stroke="#657e61" stroke-width="3" stroke-linecap="round">
+    <path d="m76 280-8-22m9 21 9-17m191-43-5-23m6 22 12-17m343 0-8-18m9 19 9-16m213 37 7-22m-8 21-7-15" />
+  </g>
+  <path d="m749 232 8-83h27l13 92" fill="#704b36" />
+  <path d="M707 158c-38-16-29-58 5-66-8-37 47-49 66-26 28-23 74 1 62 30 43 12 38 62-2 67Z" fill="#657e61" />
+  <path d="M753 235c-18 18-21 34-40 45m62-41 4 29 24 20m-23-20-20 17" stroke="#947558" stroke-width="4" stroke-linecap="round" />
+  <path d="M91 281c18-17 42-16 62 3-22 8-41 12-62-3Z" fill="#bda587" />
+  <g stroke="#bda587" stroke-width="48" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M136 269c43 26 67 63 94 98s74 54 128 65 100 1 144 25l76 54" />
+    <path d="M358 432c-5-48 14-79 43-112s44-61 47-102" />
+    <path d="M690 510c39-43 96-63 119-103s59-99 47-160" />
+    <path d="M285 409c-16 31-31 50-60 65s-31 40-28 57" />
+  </g>
+  <path d="M154 524c-5-24 13-38 39-39 28-1 48 10 54 29 8 27-15 41-43 40-26 0-44-11-50-30Z" fill="#704b36" stroke="#bda587" stroke-width="8" />
+  <path d="M550 527c-3-31 17-57 50-59 27-2 44 6 65 5 36-2 66 8 79 36 15 32 17 67-8 84-23 15-61 12-94 12-39 0-78-1-89-25-6-14-6-34-3-53Z" fill="#704b36" stroke="#bda587" stroke-width="8" />
+  <g stroke="#704b36" stroke-width="32" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M136 269c43 26 67 63 94 98s74 54 128 65 100 1 144 25l76 54" />
+    <path d="M358 432c-5-48 14-79 43-112s44-61 47-102" />
+    <path d="M690 510c39-43 96-63 119-103s59-99 47-160" />
+    <path d="M285 409c-16 31-31 50-60 65s-31 40-28 57" />
+  </g>
+  <ellipse cx="652" cy="589" rx="83" ry="6" fill="#947558" />
+  <g transform="translate(232 267) scale(.64)">
+    <path d="M566 407c-10-40 21-68 62-59 38 8 63 42 46 72l-28 29-76-11Z" fill="#c46134" />
+    <path d="m583 379-20-32-14 40-22 14 32 28 40-18Z" fill="#d5743f" />
+    <path d="m563 360-8 24 19-4Z" fill="#543e32" />
+    <path d="m527 401 32 9 29-9-29 28Z" fill="#fff6e7" />
+    <path d="m527 400 8-2-2 8Z" fill="#243e32" />
+    <path d="m554 394 9 2" stroke="#243e32" stroke-width="3" stroke-linecap="round" />
+    <path d="M660 387c54 4 67 43 41 60-29 19-91 13-118-6-20-14-12-34 8-31 31 7 57 21 69 5 5-7 4-18 0-28Z" fill="#b6512d" />
+    <path d="M591 410c13 3 25 8 37 10l-6 29c-15-2-29-6-39-8-20-14-12-34 8-31Z" fill="#fff6e7" />
+  </g>
+  <use href="#kit" transform="translate(687 530) scale(.56)" />
+  <use href="#kit" transform="translate(724 546) scale(.54)" />
+  <use href="#kit" transform="translate(590 575) scale(.56)" />
+  <use href="#kit" transform="translate(637 578) scale(.58)" />
+  <use href="#kit" transform="translate(686 579) scale(.55)" />
+  <g stroke="#243e32" stroke-width="2" stroke-dasharray="5 5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M120 178v49l16 42" />
+    <path d="M448 168v50" />
+    <path d="M874 184v30l-18 33" />
+    <path d="M191 361h75l54 61" />
+    <path d="M184 598v-38l13-29" />
+    <path d="M782 620v-33l-43-37" />
+  </g>
+  <g fill="#a94727">
+    <circle cx="136" cy="269" r="5" />
+    <circle cx="448" cy="218" r="5" />
+    <circle cx="856" cy="247" r="5" />
+    <circle cx="320" cy="422" r="5" />
+    <circle cx="197" cy="531" r="5" />
+    <circle cx="739" cy="550" r="5" />
+  </g>
+  <g fill="#243e32" font-family="Georgia, serif" font-size="25">
+    <text x="42" y="165">Main entrance</text>
+    <text x="343" y="153">Another entrance</text>
+    <text x="812" y="170">An exit</text>
+    <text x="48" y="329">Branching</text>
+    <text x="48" y="357">tunnels</text>
+    <text x="60" y="626">Side chamber</text>
+    <text x="662" y="650">Nursery chamber</text>
+  </g>
+  <text x="60" y="652" fill="#536353" font-family="Verdana, sans-serif" font-size="17">Found in some dens</text>
+  <text x="480" y="701" text-anchor="middle" fill="#243e32" font-family="Georgia, serif" font-size="24">A mother and five kits in a sheltered nursery</text>
+  <text x="480" y="737" text-anchor="middle" fill="#536353" font-family="Verdana, sans-serif" font-size="17">Illustrative cutaway / not to scale / every den is different</text>
+</svg>

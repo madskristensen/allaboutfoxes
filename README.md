@@ -136,7 +136,16 @@ end of each article and keep photo credits attached to the photograph.
 The [NPS image-use policy](https://www.nps.gov/aboutus/disclaimer.htm) identifies
 NPS-created U.S. Government works as public domain unless otherwise noted.
 The downloaded image is 960 by 481 pixels. No NPS logo is used and no endorsement
-is implied. The fox field-marks SVG is an original illustration, not a photograph.
+is implied. The fox field-marks and den cutaway SVGs are original illustrations,
+not photographs. The den diagram is a source-informed, not-to-scale example with
+three connected openings, branching tunnels, a side chamber, and a nursery with
+a mother and five kits. References include [Seton's public-domain excavated-den
+plan](https://commons.wikimedia.org/wiki/File:Foxden.jpg), its accompanying account
+in *Life-histories of Northern Animals* (volume II, pages 716-717 and 721),
+[Wildlife Online's den research and photographs](https://www.wildlifeonline.me.uk/animals/article/red-fox-dens-earths-resting-sites),
+and [Linda J. Spielman's entrance photographs](https://lindajspielman.com/2021/08/23/checking-out-fox-dens/).
+It is not a measured reconstruction of one den: real dens vary in complexity,
+and not all have side chambers. Reference photographs are not republished.
 
 ## Social sharing previews
 

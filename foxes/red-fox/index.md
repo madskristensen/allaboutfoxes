@@ -88,11 +88,30 @@ woodland has a lot of messages we cannot easily notice!
 
 Young foxes are called **kits**, cubs, or pups. They are born with their eyes
 closed and depend on adults for food and care. A sheltered den gives the
-family a place to raise its young.
+family a place to raise its young. A litter averages about five kits, but
+litters can be smaller or larger.
 
 Adults may dig a den or use a burrow made by another animal. As the kits grow,
 they begin venturing outside, playing, and learning about their surroundings.
 Both parents can help provide food, and sometimes older offspring help too.
+
+### Peek inside a den
+
+Imagine looking through the soil like a wildlife scientist with X-ray vision!
+This **cutaway diagram** shows a more complex den: several surface openings
+connect to narrow, branching tunnels, with a larger nursery chamber where
+a mother fox can nurse her kits. Another opening offers a different way out.
+There is a smaller side chamber, too; side chambers have been reported in
+excavated dens, but not every den has one.
+
+Foxes may enlarge an old rabbit or woodchuck burrow, or use part of a badger
+sett. Some dens are much simpler than this one. Our picture brings the
+branches into view together; it is not a measured map of a particular den.
+
+<figure class="field-illustration">
+	<img src="{{ '/assets/images/red-fox-den.svg' | relative_url }}" width="960" height="760" alt="Cutaway diagram of a red fox den: three entrances connect through branching tunnels to a small side chamber and a larger nursery chamber with a mother fox and five kits." loading="lazy">
+  <figcaption>A peek beneath the grass! Original All About Foxes illustration informed by <a href="https://commons.wikimedia.org/wiki/File:Foxden.jpg">Seton's published plan of an excavated den</a> and <a href="https://www.wildlifeonline.me.uk/animals/article/red-fox-dens-earths-resting-sites">Wildlife Online's den research</a>. This example is not to scale; real dens vary in shape and number of chambers. Never approach or disturb a wild den; watch only from a distance with an adult.</figcaption>
+</figure>
 
 Red foxes often hunt alone rather than in a big pack. They are frequently
 active around dusk and at night, but a fox out in daylight is not unusual,
@@ -132,4 +151,7 @@ more detail for grown-ups and curious readers who want to dig deeper:
 
 - [University of Michigan Animal Diversity Web: red fox](https://animaldiversity.org/accounts/Vulpes_vulpes/) -- range, habitats, food, color forms, and family life.
 - [Yellowstone National Park: red fox](https://www.nps.gov/yell/learn/nature/red-fox.htm) -- identification, behavior, and why foxes should not be fed.
+- [Wildlife Online: red fox dens and resting sites](https://www.wildlifeonline.me.uk/animals/article/red-fox-dens-earths-resting-sites) -- den entrances, tunnels, chambers, and photographs of real den sites.
+- [Ernest Thompson Seton: fox-den plan (1909), via Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Foxden.jpg) -- public-domain side view and plan of an excavated den; the accompanying account in [Life-histories of Northern Animals, volume II, pages 716-717 and 721](https://archive.org/details/lifehistoriesofn02seto) describes a branching passage and side chamber. Historical observations, not a blueprint for every den.
+- [Linda J. Spielman: Checking Out Fox Dens](https://lindajspielman.com/2021/08/23/checking-out-fox-dens/) -- field photographs of real entrances, including several openings at one red fox den site.
 - [National Park Service image-use information](https://www.nps.gov/aboutus/disclaimer.htm) -- the credited NPS photograph is a U.S. Government work in the public domain.
