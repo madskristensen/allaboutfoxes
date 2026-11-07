@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" role="img" aria-labelledby="title desc">
+  <title id="title">Fennec fox field marks</title>
+  <desc id="desc">A pale sandy fox with enormous ears, fur-covered paws, and a black tail tip. Diagram, not a scale comparison.</desc>
+  <rect width="960" height="560" rx="24" fill="#faf7ef"/>
+  <text x="45" y="58" font-family="Georgia, serif" font-size="30" fill="#243e32">Built for sandy country</text>
+  <ellipse cx="490" cy="436" rx="284" ry="19" fill="#e6d9ba"/>
+  <path d="M596 323Q709 268 802 351Q852 397 784 412Q686 426 585 371Z" fill="#dfc18d"/>
+  <path d="M783 334Q848 374 814 404Q799 414 779 413Q808 382 783 334Z" fill="#453d32"/>
+  <ellipse cx="488" cy="325" rx="149" ry="70" fill="#e5c992"/>
+  <path d="M384 344L369 426L405 427L434 347M543 350L557 427L591 427L587 339" fill="#dfc18d"/>
+  <path d="M368 412L357 431L406 431L413 413M554 412L550 431L600 431L590 412" fill="#f2e4c4"/>
+  <path d="M342 256L333 95Q355 67 393 246M398 244L423 91Q445 75 447 278Z" fill="#e5c992"/>
+  <path d="M347 123L357 232L382 247Q371 152 347 123M428 116L411 247L433 263Z" fill="#d5a994"/>
+  <path d="M437 250Q393 219 345 255L300 292L345 325Q409 335 447 285Z" fill="#e5c992"/>
+  <path d="M305 293L345 313Q399 311 424 281L403 325Q357 339 305 293Z" fill="#fff3d8"/>
+  <path d="M299 289L316 289L307 301Z" fill="#333c32"/>
+  <circle cx="356" cy="276" r="5" fill="#243e32"/>
+  <path d="M411 338Q453 368 517 355L513 380Q446 392 411 359Z" fill="#f7e8c9"/>
+  <g fill="none" stroke="#657e61" stroke-width="2">
+    <path d="M216 136L309 136L336 166"/>
+    <path d="M663 168L554 168L517 263"/>
+    <path d="M188 468L330 468L381 426"/>
+    <path d="M784 468L805 416"/>
+  </g>
+  <g font-family="Verdana, sans-serif" font-size="21" fill="#243e32">
+    <text x="48" y="128">Enormous ears</text>
+    <text x="48" y="155" font-size="17" fill="#536353">Hearing + heat loss</text>
+    <text x="674" y="164">Pale sandy coat</text>
+    <text x="48" y="475">Fur-covered paws</text>
+    <text x="668" y="493">Black tail tip</text>
+    <text x="45" y="532" font-size="17" fill="#536353">Vulpes zerda / Simplified field marks, not to scale</text>
+  </g>
+</svg>

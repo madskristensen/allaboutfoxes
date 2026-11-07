@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" role="img" aria-labelledby="title desc">
+  <title id="title">Island fox field marks</title>
+  <desc id="desc">A small gray-backed fox with rusty sides, contrasting face markings, and a dark stripe on its tail. Location and size matter as well as color.</desc>
+  <rect width="960" height="560" rx="24" fill="#faf7ef"/>
+  <text x="45" y="58" font-family="Georgia, serif" font-size="30" fill="#243e32">A Channel Islands original</text>
+  <ellipse cx="500" cy="429" rx="257" ry="18" fill="#dde0ce"/>
+  <path d="M603 308Q669 298 733 356L785 388Q757 418 699 385L592 353Z" fill="#93988a"/>
+  <path d="M618 309Q690 319 738 361L785 388L775 398Q731 380 709 366L611 326Z" fill="#41463c"/>
+  <ellipse cx="500" cy="313" rx="130" ry="68" fill="#a5633e"/>
+  <path d="M373 293Q414 228 530 251Q601 259 628 303Q539 285 480 311L390 319Z" fill="#959b8e"/>
+  <g fill="none" stroke="#657164" stroke-width="3" opacity=".8">
+    <path d="M443 270L458 263M472 280L489 272M503 266L521 261M540 280L556 272M574 292L589 285M410 289L425 281"/>
+  </g>
+  <path d="M396 334L388 420L420 420L441 339M550 338L561 420L590 420L584 329" fill="#b9784a"/>
+  <path d="M388 407L380 425L420 425L423 407M559 408L556 425L596 425L588 407" fill="#84654a"/>
+  <path d="M347 259L350 183L390 238M401 242L439 184L443 282Z" fill="#93998b"/>
+  <path d="M359 201L360 246L380 243M431 204L413 246L433 261Z" fill="#b9784a"/>
+  <path d="M440 247Q390 222 348 255L304 294L347 324Q409 330 447 281Z" fill="#9ba093"/>
+  <path d="M307 296L348 314Q392 313 424 284L407 322Q356 340 307 296Z" fill="#f0e5cd"/>
+  <path d="M334 274L355 264L370 274L358 281Z" fill="#41463c"/>
+  <circle cx="356" cy="274" r="4" fill="#243e32"/>
+  <path d="M303 290L318 291L309 301Z" fill="#243e32"/>
+  <path d="M418 343Q455 373 517 357L513 376Q451 388 418 360Z" fill="#e5d7b7"/>
+  <g fill="none" stroke="#657e61" stroke-width="2">
+    <path d="M249 191L309 191L350 249"/>
+    <path d="M636 168L555 168L506 261"/>
+    <path d="M241 465L381 465L449 349"/>
+    <path d="M757 465L745 383"/>
+  </g>
+  <g font-family="Verdana, sans-serif" font-size="21" fill="#243e32">
+    <text x="47" y="181">Contrasting face</text>
+    <text x="647" y="165">Grizzled gray back</text>
+    <text x="90" y="474">Rusty sides</text>
+    <text x="653" y="493">Dark tail stripe</text>
+    <text x="47" y="118" font-size="17" fill="#536353">Six island populations / Size and location matter, not just coat color</text>
+    <text x="45" y="532" font-size="17" fill="#536353">Urocyon littoralis / Not to scale against our mainland gray fox</text>
+  </g>
+</svg>

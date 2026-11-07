@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">The Fox Knowledge Quiz sharing card</title>
+  <desc id="desc">A woodland field notebook with a friendly fox and three checked discoveries beside the invitation to test your fox knowledge.</desc>
+  <rect width="1200" height="630" fill="#faf7ef"/>
+  <rect x="28" y="28" width="1144" height="574" rx="16" fill="none" stroke="#d9dccb" stroke-width="2"/>
+  <text x="75" y="131" font-family="Verdana, sans-serif" font-size="17" letter-spacing="3" fill="#536353">WESLEY'S FIELD CHALLENGE</text>
+  <g font-family="Georgia, serif" font-size="70" fill="#243e32"><text x="70" y="242">How well do</text><text x="70" y="326">you know</text><text x="70" y="410" fill="#a94727">foxes?</text></g>
+  <text x="75" y="476" font-family="Verdana, sans-serif" font-size="24" fill="#536353">10 questions. A trail of discoveries.</text>
+  <text x="75" y="552" font-family="Verdana, sans-serif" font-size="17" fill="#243e32">www.allaboutfoxes.com/quiz/</text>
+  <rect x="690" y="91" width="405" height="447" rx="30" fill="#e2e8d9"/>
+  <rect x="722" y="116" width="343" height="392" rx="8" fill="#fffdf5" stroke="#becbb5" stroke-width="2"/>
+  <path d="M748 116V508" stroke="#d5c1a2" stroke-width="3"/>
+  <g transform="translate(802 141) scale(1.7)"><path fill="#bd542e" d="M12 9 40 29Q50 25 60 29L88 9 84 62 50 94 16 62Z"/><path fill="#653b30" d="m20 23 16 13-15 12zm60 0L64 36l15 12z"/><path fill="#fff6e7" d="M17 52q18-4 33 24Q65 48 83 52L50 94Z"/><path fill="#283e33" d="m43 77 14 0-7 9z"/><path fill="none" stroke="#283e33" stroke-linecap="round" stroke-width="4" d="m29 53 8 3m26 0 8-3"/></g>
+  <g fill="#edf0e6" stroke="#657e61" stroke-width="2"><rect x="780" y="337" width="23" height="23" rx="4"/><rect x="780" y="387" width="23" height="23" rx="4"/><rect x="780" y="437" width="23" height="23" rx="4"/></g>
+  <path d="M785 347L791 353L800 341M785 397L791 403L800 391M785 447L791 453L800 441" fill="none" stroke="#244c3d" stroke-width="3"/>
+  <g font-family="Verdana, sans-serif" font-size="22" fill="#243e32"><text x="825" y="356">Follow the clues</text><text x="825" y="406">Check your answers</text><text x="825" y="456">Learn something wild</text></g>
+</svg>

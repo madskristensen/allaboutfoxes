@@ -3,11 +3,13 @@
 A small wildlife field guide for curious kids, made for Wesley. Built with
 Jekyll and deployed to GitHub Pages at **https://www.allaboutfoxes.com**.
 
-The site includes the original front page, a Meet the Foxes section, an
-illustrated Red Fox article, and a friendly 404. There are no empty "coming
-soon" pages, external fonts, trackers, cookies, JavaScript, or third-party
-image requests. The SVG fox illustrations are original site artwork; the
-locally hosted photograph is credited below and in the article.
+The site includes the original front page, a Meet the Foxes section,
+illustrated Red Fox, Arctic Fox, Gray Fox, Fennec Fox, Bat-eared Fox, and Island
+Fox profiles, a fox knowledge quiz, and a friendly
+404. There are no empty "coming soon" pages, external fonts, trackers, cookies,
+or third-party image requests. A small local script powers the quiz only;
+the rest of the site stays static. The SVG fox illustrations are original site artwork; the
+locally hosted photographs are credited below and beside each photograph.
 
 ## Local preview
 
@@ -38,7 +40,10 @@ bundle exec ruby scripts\check_site.rb
 
 The checker validates generated HTML, local links and anchors, metadata, images,
 strict SVG XML, the logo link's accessible labeling,
-and source-file exclusions. It also builds temporary parent/child Markdown pages
+and source-file exclusions. Profile checks cover photo dimensions and web-sized
+files, linked credits, species-specific diagrams, automatic card ordering, and
+expanded homepage fact cards. Quiz checks cover answer keys, accessible labels,
+no-JavaScript answers, and research links. It also builds temporary parent/child Markdown pages
 under a `/preview` base path to exercise recursive navigation and breadcrumbs.
 These test pages are never included in the published site.
 
@@ -46,9 +51,10 @@ These test pages are never included in the published site.
 
 | Path | Purpose |
 | --- | --- |
-| `index.html` | The front page: welcome, facts, and Wesley's adventure |
+| `index.html` | The front page: welcome, facts, and the adventure panel with a quiz link |
 | `_config.yml` | Site title, description, canonical domain, and defaults |
 | `_data/navigation.yml` | Header links; supports nested `children` |
+| `_data/quiz.yml` | Quiz questions, three choices, correct answer, explanation, and source |
 | `_layouts/default.html` | Shared head, header, navigation, and footer |
 | `_layouts/page.html` | Article layout with title and breadcrumbs |
 | `_layouts/section.html` | Section landing page with automatic fox article cards |
@@ -56,11 +62,20 @@ These test pages are never included in the published site.
 | `_includes/navigation.html` | Recursive navigation renderer |
 | `foxes/index.md` | Meet the Foxes section at `/foxes/` |
 | `foxes/red-fox/index.md` | Complete example article at `/foxes/red-fox/` |
+| `foxes/arctic-fox/index.md` | Arctic fox profile, seasonal coats, and tundra den |
+| `foxes/gray-fox/index.md` | Gray fox profile, tree-climbing adaptations, and hollow-log den |
+| `foxes/fennec-fox/index.md` | Fennec profile, desert adaptations, and shrub-supported sandy den |
+| `foxes/bat-eared-fox/index.md` | Bat-eared profile, insect-hunting teeth, and family burrow |
+| `foxes/island-fox/index.md` | Island profile, six island subspecies, rock shelter, and conservation |
+| `quiz/index.md` | Accessible ten-question quiz at `/quiz/` |
+| `site.webmanifest` | Home-screen app name, scope, theme, and icons |
 | `_templates/page.md` | Copyable page starter; not published by Jekyll |
 | `assets/css/style.css` | Responsive design and reduced-motion support |
-| `assets/images/` | Original SVG artwork and a credited NPS photograph |
+| `assets/js/quiz.js` | Local-only quiz progress, scoring, explanations, and retry |
+| `assets/images/` | Original SVG artwork and credited, locally hosted photographs |
 | `.github/workflows/pages.yml` | Build, validate, and deploy |
 | `scripts/check_site.rb` | Build-output and page-structure checks |
+| `scripts/export_artwork.mjs` | Optional local Edge/Chromium export of original SVG cards and icons |
 | `llms.txt` | Automatically generated content guide for AI tools |
 
 ## Add pages and subpages
@@ -110,7 +125,7 @@ or have permission to publish. Avoid publishing personal details about children.
 ### Add another fox to Meet the Foxes
 
 Use `foxes\red-fox\index.md` as the complete working example. Create a new
-directory such as `foxes\arctic-fox` and write its `index.md`. Keep `layout: fox`
+directory for the new species and write its `index.md`. Keep `layout: fox`
 and `section: /foxes/`, then update the title, description, scientific name,
 `nav_order`, breadcrumbs, and all image and quick-fact fields for that species.
 Use an `image` object with `path`, `width`, `height`, and descriptive `alt` text,
@@ -129,7 +144,26 @@ Use the existing `field-illustration`, `explorer-note`, and `wonder-box` pattern
 for captioned figures, activities, and revealable questions. Cite sources at the
 end of each article and keep photo credits attached to the photograph.
 
-### Photograph credit
+Keep the welcoming language, but give fox enthusiasts real detail: define
+technical terms, distinguish local averages from species-wide ranges, name
+units and populations, and identify the source of developmental timelines.
+Do not combine conflicting sources into an invented universal value. Match
+identification and den illustrations to the species and season rather than
+recoloring the red fox. Explain schematic features and never imply that an
+illustrative den is a measured blueprint.
+
+Add educational photographs throughout each profile with `article-photo`
+figures, descriptive alt text, actual pixel dimensions, and linked credits.
+Lazy-load photos below the lead image, keep files under 1 MB, and use
+`relative_url` for local paths. Lead photos default to a public-domain credit:
+use that only when verified. For a licensed lead, set both `image_license`
+(for example, `CC BY-SA 4.0`) and `image_license_url`, and include changes in
+`image_caption`. The layout links the license beside the photographer. For
+other figures, put the license link and modification notice in the caption.
+Adapted CC BY-SA photographs retain their respective share-alike licenses;
+this does not relicense the whole website or its original artwork.
+
+### Photograph credits and illustration research
 
 `assets/images/red-fox-yellowstone.jpg` is a locally hosted photograph by
 **NPS / Neal Herbert**, from [Yellowstone National Park's Red Fox page](https://www.nps.gov/yell/learn/nature/red-fox.htm).
@@ -147,6 +181,86 @@ and [Linda J. Spielman's entrance photographs](https://lindajspielman.com/2021/0
 It is not a measured reconstruction of one den: real dens vary in complexity,
 and not all have side chambers. Reference photographs are not republished.
 
+Additional photographs, all hosted locally as JPEGs:
+
+| Local image | Photographer and source record | Reuse and changes |
+| --- | --- | --- |
+| `red-fox-kits.jpg` (1200 by 800) | [Jennifer Cross / USFWS](https://commons.wikimedia.org/wiki/File:Red_fox_kits_(40215161564).jpg) | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/); resized |
+| `arctic-fox-winter.jpg` (1200 by 630) | [Keith Morehouse / USFWS](https://commons.wikimedia.org/wiki/File:Alopex_lagopus_coiled_up_in_snow.jpg) | Public domain; center-cropped and resized; profile lead, section card, and sharing image |
+| `arctic-fox-tundra.jpg` (1200 by 630) | [Lisa Hupp / USFWS](https://commons.wikimedia.org/wiki/File:Arctic_fox_(51356519412).jpg) | Public domain; center-cropped and resized |
+| `arctic-fox-molt.jpg` (1200 by 900) | [AGB / USFWS](https://commons.wikimedia.org/wiki/File:Shedding_Arctic_Fox_(51293918357).jpg) | Public domain; resized |
+| `arctic-fox-kits.jpg` (1200 by 801) | [Lisa Hupp / USFWS](https://commons.wikimedia.org/wiki/File:Arctic_fox_siblings_(51358274825).jpg) | Public domain; resized |
+| `gray-fox-woodland.jpg` (1200 by 630) | [Tammy Mealman / USFWS](https://commons.wikimedia.org/wiki/File:Gray_Fox_(35870741011).jpg) | Public domain; center-cropped and resized |
+| `gray-fox-camera-trap.jpg` (1200 by 862) | [Bryan White / USFWS](https://commons.wikimedia.org/wiki/File:Gray_fox_(6492408315).jpg) | Public domain; resized |
+| `fennec-fox-ears.jpg` (1200 by 630) | [Anass ERRIHANI](https://commons.wikimedia.org/wiki/File:Fennec_Fox_Peek.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/); top-cropped and resized; adapted image retains this license |
+| `fennec-fox-resting.jpg` (1200 by 800) | [Grendelkhan](https://commons.wikimedia.org/wiki/File:Sleeping_Vulpes_zerda_at_Happy_Hollow,_closeup.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/); resized; adapted image retains this license; photographed at Happy Hollow Park and Zoo |
+| `bat-eared-fox-namibia.jpg` (1200 by 630) | [Giles Laurent](https://commons.wikimedia.org/wiki/File:187_Bat-eared_fox_in_Otjozondjupa_Region_Photo_by_Giles_Laurent.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/); top-cropped and resized; adapted image retains this license |
+| `bat-eared-fox-foraging.jpg` (1200 by 900) | [Hans Hillewaert](https://commons.wikimedia.org/wiki/File:Otocyon_megalotis_(Namibia).jpg) | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/); resized; adapted image retains this license |
+| `island-fox-channel-islands.jpg` (1200 by 630) | [National Park Service](https://commons.wikimedia.org/wiki/File:Urocyon_littoralis_full_figure.jpg) | Public domain; top-cropped and resized |
+| `island-fox-habitat.jpg` (1200 by 900) | [National Park Service](https://commons.wikimedia.org/wiki/File:Island_fox_(0795e6f3ace4496ca92c041c061083ba).jpg) | Public domain; resized |
+
+The Arctic fox field-marks illustration shows compact winter proportions,
+furry paws, and seasonal swatches for both white and blue morphs. Its summer
+den cutaway shows a treeless mound, four connected entrances, an adult in a
+brown summer coat, seven dark pups, and a schematic frozen-ground boundary.
+These original SVGs are informed by [Alaska Fish and Game's Arctic fox
+account](https://www.adfg.alaska.gov/index.cfm?adfg=arcticfox.printerfriendly)
+and [Animal Diversity Web's den descriptions](https://animaldiversity.org/accounts/Vulpes_lagopus/).
+The drawing is not to scale: entrance counts, litter size, and thaw depth
+vary. The article follows the Alaska account consistently for pup milestones
+and explicitly distinguishes its timeline from ADW's older summary.
+
+The Gray Fox profile uses the same layouts but identifies **Urocyon**, not
+**Vulpes**. Its original field-marks SVG labels the grizzled back, rusty legs,
+black tail stripe, black tail tip, and a schematic hooked claw. The hollow-log
+den cutaway shows one sheltered cavity with an adult and four example pups,
+not an underground tunnel system copied from another species. References are
+[NPS identification and den notes](https://www.nps.gov/cwdw/learn/nature/gray-fox.htm),
+[NPS climbing anatomy and diet notes](https://www.nps.gov/zion/learn/nature/gray-fox.htm),
+[Animal Diversity Web](https://animaldiversity.org/accounts/Urocyon_cinereoargenteus/),
+and [the University of Minnesota](https://mnmammals.d.umn.edu/gray-fox).
+The latter supplies geographically labeled measurements and the profile's pup
+timeline. Keep climbing claims species-specific rather than applying them to
+foxes as a group. A silver fox remains a color form of the red fox, not a gray fox.
+
+The three additional species also have original, species-specific SVG pairs.
+Fennec diagrams show huge ears, furry feet, and sandy passages beneath a shrub
+with two example pups, informed by [Smithsonian](https://nationalzoo.si.edu/animals/fennec-fox)
+and [Animal Diversity Web](https://animaldiversity.org/accounts/Vulpes_zerda/).
+Bat-eared fox diagrams show dark field marks, a tooth-count note, and a grassland
+burrow with three example kits, informed by [San Diego Zoo](https://animals.sandiegozoo.org/animals/bat-eared-fox)
+and [Smithsonian](https://nationalzoo.si.edu/animals/bat-eared-fox). The latter
+supplies the profile's pup timeline. Island fox diagrams show gray-and-rust field
+marks and an existing rock cavity with two dark example pups, informed by
+[NPS](https://www.nps.gov/chis/learn/nature/island-fox.htm) and
+[Animal Diversity Web](https://animaldiversity.org/accounts/Urocyon_littoralis/).
+The conservation story explicitly dates the [2016 federal recovery decision](https://www.fws.gov/press-release/2016-08/interior-announces-fastest-successful-recovery-endangered-species-act-0)
+rather than presenting historical counts or listings as current. All den
+layouts are illustrative, not measured plans; captions explain scale and safety.
+
+## Fox knowledge quiz
+
+The homepage adventure panel links to `/quiz/`. Edit `_data/quiz.yml` to maintain
+its ten questions: each entry has a `question`, three text `options`, a one-based
+`answer` index, an `explanation`, and a `source` URL with a `source_label`.
+Quote choices containing commas or words such as "Yes" and "No" so YAML preserves
+them as text. Every answer must be supported by the linked field-guide section;
+keep its fragment valid when changing article headings.
+
+The page uses native labeled radio groups and required-answer validation. Its
+local script shows progress, grades all answers, explains each answer, focuses
+the result, and supports changing answers or starting over. After grading,
+correct choices are green and wrong selections are warm red, with explicit
+text labels and question verdicts so color is never the only clue. Changing
+an answer or retrying clears all previous result labels and highlights. There is no timer,
+account, storage, network submission, analytics, or external script. Without
+JavaScript, readers can still choose answers and open the native answer key.
+Keep this script scoped to the quiz rather than adding JavaScript site-wide.
+
+When changing quiz behavior, also exercise unanswered submission, all-correct,
+partly correct, and all-incorrect answers, edits after grading, retry, keyboard
+controls, narrow screens, and the no-JavaScript answer key in a browser.
+
 ## Social sharing previews
 
 The existing `jekyll-seo-tag` plugin is the single source for Open Graph,
@@ -159,7 +273,10 @@ Pages without their own image inherit the original woodland card at
 `assets/images/social-card.png` (1200 by 630 pixels). Its editable source is
 `assets/images/social-card.svg`; after editing it, export a PNG at exactly
 1200 by 630 pixels and commit both files. Social crawlers need the raster
-image, not the SVG. The Red Fox page instead uses its credited local photograph.
+image, not the SVG. Meet the Foxes has its own six-portrait woodland card,
+the quiz has a field-notebook card, and the 404 has a winding-trail card.
+Each fox profile instead uses its own credited local lead photograph. All
+current content pages therefore have relevant, distinct sharing images.
 
 To override the default, set an `image` object in front matter with `path`,
 `width`, `height`, and `alt`. Use a local PNG or JPEG under 5 MB, at least
@@ -175,6 +292,37 @@ After deployment, inspect the public URL in Facebook's Sharing Debugger or
 LinkedIn's Post Inspector if an old preview persists; platforms cache previews
 and may need to fetch the page again. No sharing scripts, tracking, or external
 image service is needed.
+
+## Save to a home screen
+
+Every page links to `site.webmanifest`, which defines the app name, stable
+identity, home start URL, scope, standalone display, woodland theme, and local
+192- and 512-pixel PNG icons. The 512-pixel icon supports both ordinary and
+maskable use: the header's fox logo stays inside the central 80%-diameter safe
+circle, with an opaque cream background extending to the edges. `apple-touch-icon.png`
+(180 pixels) supplies the iPhone/iPad icon; a 32-pixel PNG favicon backs up
+the existing SVG favicon. All paths also work under a repository subpath.
+
+The editable icon source is `assets/images/app-icon.svg`. To re-export that
+artwork and all four social-card SVGs using Node.js 22+ and a locally installed
+Edge/Chromium browser, run:
+
+```powershell
+node scripts\export_artwork.mjs
+```
+
+The exporter detects Edge on Windows and common Chromium paths on Linux.
+Set `BROWSER_PATH` to an installed browser executable for other locations.
+It uses an isolated temporary browser profile, no packages or network service,
+and writes the matching PNGs under `assets/images`; commit sources and PNGs.
+Node and a browser are only needed when regenerating artwork, not for Jekyll
+builds, CI validation, or browsing. The checker validates manifest JSON, icon
+sizes, Apple links, social metadata, and `/preview` scope and URLs.
+
+Device/browser support determines the exact Add to Home Screen or Install
+experience. There is deliberately no service worker, offline promise, push
+permission, install prompt, tracking, or sharing widget. Saving the icon is
+not a guarantee that every browser will offer app installation or work offline.
 
 ## AI content guide
 

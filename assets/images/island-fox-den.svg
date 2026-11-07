@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="650" viewBox="0 0 960 650" role="img" aria-labelledby="title desc">
+  <title id="title">An island fox's rock-crevice shelter</title>
+  <desc id="desc">A coastal scrub shelter in an existing cavity beneath rocks, with an adult and two dark example pups. No excavated tunnel network is shown. Not to scale.</desc>
+  <defs>
+    <g id="pup">
+      <ellipse cx="0" cy="0" rx="24" ry="14" fill="#705b46"/>
+      <path d="M-23-2L-25-24L-11-15L0-23L2-1L-12 9Z" fill="#705b46"/>
+      <circle cx="-19" cy="-5" r="2" fill="#243e32"/>
+    </g>
+  </defs>
+  <rect width="960" height="650" rx="24" fill="#faf7ef"/>
+  <text x="45" y="57" font-family="Georgia, serif" font-size="30" fill="#243e32">A shelter found, not a tunnel blueprint</text>
+  <text x="45" y="91" font-family="Verdana, sans-serif" font-size="18" fill="#536353">Island fox / Illustrative cutaway, not to scale</text>
+  <path d="M25 387Q227 344 471 368T935 363V620H25Z" fill="#d5c1a2"/>
+  <path d="M757 365L759 225M759 294L716 249M759 267L801 222" fill="none" stroke="#704b36" stroke-width="9"/>
+  <g fill="#85976b"><ellipse cx="717" cy="239" rx="48" ry="28"/><ellipse cx="765" cy="214" rx="55" ry="32"/><ellipse cx="813" cy="211" rx="45" ry="26"/></g>
+  <path d="M169 427L211 295L340 273L396 344L360 439Z" fill="#8d9587" stroke="#657164" stroke-width="3"/>
+  <path d="M302 273L376 219L555 220L634 283L559 342L383 334Z" fill="#b0b3a1" stroke="#657164" stroke-width="3"/>
+  <path d="M555 303L642 268L724 330L746 447L627 454L586 381Z" fill="#939b8c" stroke="#657164" stroke-width="3"/>
+  <path d="M304 439Q328 338 408 323Q505 303 588 353L628 449Z" fill="#655b49"/>
+  <path d="M312 440Q423 415 623 446L620 468L308 467Z" fill="#b19b73"/>
+  <path d="M330 450L598 456M345 460L580 464" stroke="#d9cba4" stroke-width="4"/>
+  <ellipse cx="418" cy="402" rx="53" ry="30" fill="#a5633e"/>
+  <path d="M371 392Q407 364 455 383L468 396L404 396Z" fill="#959b8e"/>
+  <path d="M374 403L370 361L389 377L405 361L411 399L391 416Z" fill="#959b8e"/>
+  <path d="M376 399L391 414L405 400" fill="#f0e5cd"/>
+  <circle cx="380" cy="392" r="3" fill="#243e32"/>
+  <path d="M458 411Q487 421 483 437L438 431Z" fill="#93998a"/>
+  <path d="M459 411Q489 422 483 437L472 434Q477 427 455 420Z" fill="#41463c"/>
+  <use href="#pup" x="525" y="430"/>
+  <use href="#pup" x="584" y="430"/>
+  <path d="M75 381L66 349M75 378L89 345M843 366L833 335M843 363L859 332" stroke="#657e61" stroke-width="4" fill="none"/>
+  <g font-family="Verdana, sans-serif" font-size="19" fill="#243e32">
+    <text x="66" y="176">Existing rock crevice</text>
+    <text x="69" y="204" font-size="17" fill="#536353">One possible den site</text>
+    <text x="674" y="144">Coastal scrub</text>
+    <text x="126" y="535">Sheltered entrance</text>
+    <text x="509" y="541">Two dark newborn pups</text>
+    <text x="45" y="595" font-size="17" fill="#536353">Other dens use hollow trees, shrubs, or ground holes. Never approach a wild den.</text>
+  </g>
+  <path d="M262 185L343 280M278 511L324 422M584 515L574 460" fill="none" stroke="#657e61" stroke-width="2"/>
+</svg>

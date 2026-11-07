@@ -1,7 +1,7 @@
 ---
 layout: fox
 title: Red Fox
-description: Meet the bright-eyed explorer with black socks, a bushy tail, and a talent for making itself at home.
+description: Investigate Vulpes vulpes through coat morphs, 42 adult teeth, hunting behavior, kit development, photographs, and a den cutaway.
 eyebrow: Field note / No. 001
 scientific_name: Vulpes vulpes
 section: /foxes/
@@ -11,16 +11,19 @@ image_caption: A red fox pauses during a winter hunt in Yellowstone National Par
 image_credit: NPS / Neal Herbert
 image_source: https://www.nps.gov/yell/learn/nature/red-fox.htm
 breadcrumbs: [{ title: Meet the Foxes, url: /foxes/ }]
-quick_facts: [{ label: Family, value: Canidae (the dog family) }, { label: Food, value: Both animals and plants }, { label: Often active, value: Around dusk and at night }, { label: Baby fox, value: A kit (also called a cub or pup) }]
+quick_facts: [{ label: Family / genus, value: Canidae / Vulpes }, { label: Adult mass, value: "3-14 kg across populations; not a typical weight for every location" }, { label: Head and body, value: "45.5-90 cm; tail adds 30-55.5 cm (ADW)" }, { label: Reproduction, value: "Usually 51-53 days of gestation; about five kits per litter on average" }]
 ---
 
-If you could design an animal for a secret woodland adventure, it might look
-a lot like a red fox. Pointed ears help it listen, a narrow muzzle helps it
-investigate, and a magnificent tail follows along behind.
+The red fox is the largest species in the genus **Vulpes**, but its size is
+not fixed across its enormous range. Animal Diversity Web (ADW) reports adult
+masses of **3-14 kg** across populations. Yellowstone's figures are much more
+local: adult males weigh about **11-12 lb (5-5.4 kg)**, and females average
+**10 lb (4.5 kg)**. A species-wide range and a local average answer different
+questions; a good fox geek always checks which one a number describes.
 
-But this fox is not just a woodland animal. It can live near farms, in
-grasslands, in mountains, and even in towns. Its secret is being
-**adaptable**: able to make use of different places and different foods.
+Its secret is being **adaptable**: red foxes use forests, grasslands, farms,
+mountains, and towns. Flexibility in food and shelter helps explain why this
+canid has such a wide distribution, not just why it visits woodland edges.
 
 <nav class="article-contents" aria-label="On this page" markdown="1">
 **Follow the trail**
@@ -39,6 +42,25 @@ Those markings are clues, not a uniform! Some red foxes have much darker
 coats. A **silver fox** is a color form of the red fox, not a separate species.
 Another color form, called a cross fox, has dark markings across its back
 and shoulders.
+
+A [gray fox]({{ '/foxes/gray-fox/' | relative_url }}) is different: it is
+**Urocyon cinereoargenteus**, a separate species, not another red fox color
+form. Compare its rusty legs and black-tipped tail with the red fox's usual
+dark lower legs and white-tipped tail.
+
+### Teeth and tracks: the close-up clues
+
+An adult normally has **42 teeth**. Its dental formula is
+**3/3 incisors, 1/1 canines, 4/4 premolars, 2/3 molars**: the numbers describe
+one side of the upper and lower jaws, so double their total. The upper fourth
+premolar is part of the slicing **carnassial** pair; other back teeth can
+crush food. That is useful equipment for a mixed diet, not just a meat diet.
+
+The forefoot has five digits, but the raised **dewclaw** does not normally
+touch the ground; the hindfoot has four. An ordinary print therefore shows
+four toes, not five. A single four-toed print is not proof of a red fox:
+compare a whole trail, the habitat, and other signs without following the
+animal or approaching its den. These anatomical details come from ADW.
 
 <figure class="field-illustration">
   <img src="{{ '/assets/images/red-fox-field-marks.svg' | relative_url }}" width="960" height="500" alt="An illustrated red fox in side view, with labels pointing to its triangular ears, dark lower legs, and white-tipped bushy tail." loading="lazy">
@@ -71,6 +93,12 @@ it stops, listens, and springs into the air. Its front feet come down toward
 the little animal it has detected. This pounce can help it catch prey hidden
 by grass or snow.
 
+This high hunting leap is often called **mousing**. ADW describes a fox
+standing still to listen and watch, then bringing its forelimbs down to pin
+the prey. Do not confuse a memorable hunting technique with its entire diet:
+fruit, insects, carrion, and other small animals also matter, in proportions
+that change with season and location.
+
 A fox may also hide extra food to eat later. Scientists call a hidden food
 store a **cache**. Think of it as a fox's tiny outdoor pantry.
 
@@ -90,6 +118,18 @@ Young foxes are called **kits**, cubs, or pups. They are born with their eyes
 closed and depend on adults for food and care. A sheltered den gives the
 family a place to raise its young. A litter averages about five kits, but
 litters can be smaller or larger.
+
+ADW reports a usual pregnancy, or **gestation**, of **51-53 days**. Kits open
+their eyes at about **9-14 days**, leave the den at around **4-5 weeks**, and
+are fully weaned at roughly **8-10 weeks**. Weaning means the end of drinking
+milk, not instant independence: young foxes still receive food and learn
+before many disperse in autumn. These ages are approximate, not deadlines
+for every litter.
+
+<figure class="article-photo">
+  <img src="{{ '/assets/images/red-fox-kits.jpg' | relative_url }}" width="1200" height="800" alt="Young red fox kits together at a wildlife refuge in Delaware." loading="lazy">
+  <figcaption>Young red foxes at a Delaware national wildlife refuge. A kit's proportions and coat differ from an adult's, so age matters when identifying a fox. <span>Photo: <a href="https://commons.wikimedia.org/wiki/File:Red_fox_kits_(40215161564).jpg">Jennifer Cross / USFWS</a>, <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>. Resized for this site.</span></figcaption>
+</figure>
 
 Adults may dig a den or use a burrow made by another animal. As the kits grow,
 they begin venturing outside, playing, and learning about their surroundings.
@@ -117,12 +157,22 @@ Red foxes often hunt alone rather than in a big pack. They are frequently
 active around dusk and at night, but a fox out in daylight is not unusual,
 especially when adults are busy finding food for growing kits.
 
+**Crepuscular** means active around dawn and dusk; **nocturnal** means active
+at night. Neither word means a fox has a fixed timetable. Yellowstone's
+camera studies show red foxes and coyotes with different winter activity
+peaks. A **home range** is the area an animal uses, not necessarily an area
+it defends everywhere: Yellowstone reports an average of **3.75 square miles
+(about 9.7 square kilometers)** on its northern range. That is a local study
+result, not a universal territory size for city and country foxes alike.
+
 <aside class="explorer-note" aria-labelledby="notebook-heading" markdown="1">
 ### Try a fox detective notebook
 
-Draw a fox and label three features you could use to recognize it. Then
-write one question you still have. Would you like to know how its ears work,
-how a kit learns to hunt, or how different its winter coat feels?
+Compare the photos here with the [Arctic fox profile]({{ '/foxes/arctic-fox/' | relative_url }}).
+Record ear shape, muzzle length, leg color, season, and whether the fox is an
+adult or a kit. Which clues still work when the coat is not orange or white?
+Then pick a measurement and record its units, population, and source. That
+extra context turns an impressive-sounding fact into a useful observation.
 
 You can be a wildlife detective with a book or a photo, too. You do not need
 to find a wild fox to make a great discovery.
@@ -151,6 +201,8 @@ more detail for grown-ups and curious readers who want to dig deeper:
 
 - [University of Michigan Animal Diversity Web: red fox](https://animaldiversity.org/accounts/Vulpes_vulpes/) -- range, habitats, food, color forms, and family life.
 - [Yellowstone National Park: red fox](https://www.nps.gov/yell/learn/nature/red-fox.htm) -- identification, behavior, and why foxes should not be fed.
+- [Wildlife Online: red fox hunting strategies](https://www.wildlifeonline.me.uk/animals/article/red-fox-diet-hunting-strategies-behaviour) -- the mousing pounce and how foxes locate small prey.
+- [Red fox kits photograph and license record](https://commons.wikimedia.org/wiki/File:Red_fox_kits_(40215161564).jpg) -- Jennifer Cross / USFWS, CC BY 2.0; the local copy is resized and credited beside the photograph.
 - [Wildlife Online: red fox dens and resting sites](https://www.wildlifeonline.me.uk/animals/article/red-fox-dens-earths-resting-sites) -- den entrances, tunnels, chambers, and photographs of real den sites.
 - [Ernest Thompson Seton: fox-den plan (1909), via Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Foxden.jpg) -- public-domain side view and plan of an excavated den; the accompanying account in [Life-histories of Northern Animals, volume II, pages 716-717 and 721](https://archive.org/details/lifehistoriesofn02seto) describes a branching passage and side chamber. Historical observations, not a blueprint for every den.
 - [Linda J. Spielman: Checking Out Fox Dens](https://lindajspielman.com/2021/08/23/checking-out-fox-dens/) -- field photographs of real entrances, including several openings at one red fox den site.

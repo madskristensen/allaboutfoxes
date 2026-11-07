@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="650" viewBox="0 0 960 650" role="img" aria-labelledby="title desc">
+  <title id="title">A fennec fox's sandy retreat</title>
+  <desc id="desc">An illustrative shrub-supported desert burrow with three connected entrances and a nursery containing an adult and two example pups. Not to scale.</desc>
+  <defs>
+    <g id="pup">
+      <ellipse cx="0" cy="0" rx="21" ry="12" fill="#c7a779"/>
+      <path d="M-23-1L-26-26L-13-14L-4-25L-3-3L-16 7Z" fill="#c7a779"/>
+      <path d="M-24 0L-16 7L-7-1" fill="#f2e4c4"/>
+      <circle cx="-19" cy="-4" r="2" fill="#243e32"/>
+    </g>
+  </defs>
+  <rect width="960" height="650" rx="24" fill="#faf7ef"/>
+  <text x="45" y="57" font-family="Georgia, serif" font-size="30" fill="#243e32">A cool place beneath the sand</text>
+  <text x="45" y="91" font-family="Verdana, sans-serif" font-size="18" fill="#536353">Fennec fox / Illustrative cutaway, not to scale</text>
+  <path d="M25 242Q214 211 416 233T935 235V620H25Z" fill="#ddc9a5"/>
+  <g fill="none" stroke="#657e61" stroke-width="7" stroke-linecap="round">
+    <path d="M323 227L320 145M320 190L282 160M321 172L356 141"/>
+  </g>
+  <g fill="#85976b">
+    <ellipse cx="278" cy="153" rx="32" ry="20"/><ellipse cx="323" cy="139" rx="35" ry="24"/><ellipse cx="360" cy="136" rx="31" ry="22"/>
+  </g>
+  <path d="M322 226L322 279L285 315M322 263L365 303M323 249L280 275" fill="none" stroke="#a58b60" stroke-width="5"/>
+  <path d="M135 236Q161 320 282 357L508 403Q609 428 670 435M477 233Q437 296 377 377M833 234Q845 327 751 417" fill="none" stroke="#9b7a52" stroke-width="70" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M135 236Q161 320 282 357L508 403Q609 428 670 435M477 233Q437 296 377 377M833 234Q845 327 751 417" fill="none" stroke="#f3e3c2" stroke-width="53" stroke-linecap="round" stroke-linejoin="round"/>
+  <ellipse cx="654" cy="439" rx="143" ry="67" fill="#9b7a52"/>
+  <ellipse cx="654" cy="435" rx="136" ry="59" fill="#f3e3c2"/>
+  <path d="M558 476L744 476M567 482L733 482" stroke="#b4a16d" stroke-width="4"/>
+  <ellipse cx="608" cy="442" rx="44" ry="23" fill="#dfc18d"/>
+  <path d="M574 440L566 393L584 416L596 395L598 435L584 449Z" fill="#dfc18d"/>
+  <path d="M573 437L583 449L592 439" fill="#fff3d8"/>
+  <circle cx="577" cy="425" r="3" fill="#243e32"/>
+  <path d="M641 447Q668 465 650 471L624 462Z" fill="#dfc18d"/>
+  <path d="M650 459L657 467L650 471L640 468Z" fill="#453d32"/>
+  <use href="#pup" x="688" y="457"/>
+  <use href="#pup" x="743" y="452"/>
+  <g font-family="Verdana, sans-serif" font-size="19" fill="#243e32">
+    <text x="74" y="192">Entrance 1</text><text x="427" y="192">Entrance 2</text><text x="781" y="192">Entrance 3</text>
+    <text x="407" y="140">Shrub roots can support tunnel walls</text>
+    <text x="65" y="460">Branching passages</text>
+    <text x="527" y="553">Nursery: two example pups</text>
+    <text x="45" y="600" font-size="17" fill="#536353">Tunnel length is not depth. Real dens vary; never approach a wild den.</text>
+  </g>
+  <path d="M230 446L281 382M668 526L668 497" fill="none" stroke="#657e61" stroke-width="2"/>
+</svg>

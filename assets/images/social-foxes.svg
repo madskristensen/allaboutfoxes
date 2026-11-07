@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Meet the Foxes sharing card</title>
+  <desc id="desc">Six original fox portraits in a woodland field-guide grid: red, Arctic, gray, fennec, bat-eared, and island foxes.</desc>
+  <rect width="1200" height="630" fill="#faf7ef"/>
+  <rect x="28" y="28" width="1144" height="574" rx="16" fill="none" stroke="#d9dccb" stroke-width="2"/>
+  <text x="70" y="99" font-family="Verdana, sans-serif" font-size="17" letter-spacing="3" fill="#536353">ALL ABOUT FOXES / THE FIELD GUIDE</text>
+  <text x="67" y="175" font-family="Georgia, serif" font-size="65" fill="#243e32">Meet the Foxes</text>
+  <text x="70" y="220" font-family="Verdana, sans-serif" font-size="24" fill="#536353">Six species. Six survival toolkits. One wild family.</text>
+  <defs>
+    <g id="small-ears"><path d="M-59-43L-56-103L-20-62Q0-69 20-62L56-103L59-43L52 7L0 49L-52 7Z"/><path d="M-51-28Q-20-29 0 23Q20-29 51-28L0 49Z" fill="#fff3d8"/><path d="M-9 24H9L0 35Z" fill="#243e32"/><path d="M-31-23L-18-19M18-19L31-23" stroke="#243e32" stroke-width="4" stroke-linecap="round"/></g>
+    <g id="big-ears"><path d="M-56-34Q-85-134-53-145Q-25-123-17-56Q0-61 17-56Q25-123 53-145Q85-134 56-34L48 7L0 47L-48 7Z"/><path d="M-52-126Q-65-94-40-45L-28-53Q-35-101-52-126M52-126Q65-94 40-45L28-53Q35-101 52-126" fill="#d5b39a"/><path d="M-49-25Q-19-24 0 22Q19-24 49-25L0 47Z" fill="#fff3d8"/><path d="M-9 23H9L0 34Z" fill="#243e32"/><path d="M-30-20L-18-16M18-16L30-20" stroke="#243e32" stroke-width="4" stroke-linecap="round"/></g>
+  </defs>
+  <g fill="#edf0e6"><rect x="61" y="255" width="164" height="278" rx="70"/><rect x="244" y="255" width="164" height="278" rx="70"/><rect x="427" y="255" width="164" height="278" rx="70"/><rect x="610" y="255" width="164" height="278" rx="70"/><rect x="793" y="255" width="164" height="278" rx="70"/><rect x="976" y="255" width="164" height="278" rx="70"/></g>
+  <use href="#small-ears" transform="translate(143 421)" fill="#c35e32"/>
+  <g transform="translate(326 421)"><path d="M-58-34Q-76-89-44-91L-22-61Q0-70 22-61L44-91Q76-89 58-34L52 10L0 49L-52 10Z" fill="#fffdf5" stroke="#d9dccb" stroke-width="2"/><path d="M-9 24H9L0 35Z" fill="#243e32"/><path d="M-30-21L-18-17M18-17L30-21" stroke="#243e32" stroke-width="4" stroke-linecap="round"/></g>
+  <use href="#small-ears" transform="translate(509 421)" fill="#92998b"/>
+  <use href="#big-ears" transform="translate(692 421)" fill="#dfc18d"/>
+  <g transform="translate(875 421)"><use href="#big-ears" fill="#9c9982"/><path d="M-34-30L-14-23L-12-9L-35-16M34-30L14-23L12-9L35-16" fill="#41443b"/></g>
+  <use href="#small-ears" transform="translate(1058 421) scale(.85)" fill="#92998b"/>
+  <g font-family="Verdana, sans-serif" font-size="19" text-anchor="middle" fill="#243e32"><text x="143" y="503">Red</text><text x="326" y="503">Arctic</text><text x="509" y="503">Gray</text><text x="692" y="503">Fennec</text><text x="875" y="503">Bat-eared</text><text x="1058" y="503">Island</text></g>
+  <text x="70" y="574" font-family="Verdana, sans-serif" font-size="17" fill="#536353">www.allaboutfoxes.com</text>
+</svg>

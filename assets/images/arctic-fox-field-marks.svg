@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" fill="none" role="img" aria-labelledby="title description">
+  <title id="title">Arctic fox field marks and coat morphs</title>
+  <desc id="description">A compact white winter fox has rounded ears, a short muzzle, short legs, furry paws, and a thick tail without a contrasting tip. Four swatches compare white-morph summer and winter coats with blue-morph summer and winter coats. Blue morphs stay dark rather than turning white.</desc>
+  <rect width="960" height="600" rx="20" fill="#edf0e6"/>
+  <text x="40" y="42" fill="#536353" font-family="Verdana, sans-serif" font-size="14" letter-spacing="2">THE ARCTIC FOX / LOOK BEYOND THE COLOR</text>
+  <ellipse cx="498" cy="388" rx="315" ry="15" fill="#dce3d1"/>
+  <g stroke="#8e9e86" stroke-width="3" stroke-linejoin="round">
+    <path d="M599 265c95-58 176-8 233 67l35 34c-79 51-192 14-258-38Z" fill="#faf7ef"/>
+    <path d="M302 237c43-34 124-44 206-22 71 18 115 56 124 102l-38 30-249-5-58-47Z" fill="#faf7ef"/>
+    <path d="m347 314 39 5-12 57 11 15h-55l-5-20Zm185 4 41 2 7 53 18 17h-59l-12-33Z" fill="#e2e4d8"/>
+    <path d="m302 305 45 13-14 56 9 18h-63l4-29Zm278 1 43-2-2 64 18 24h-60l-7-40Z" fill="#faf7ef"/>
+    <path d="M235 241c-10-24-11-55 2-59 17-5 28 18 35 33 11-2 24-1 35 3 6-16 17-28 29-20 12 9 7 32-1 46l-4 42-38 38-70-11-54-35 45-18Z" fill="#faf7ef"/>
+  </g>
+  <path d="M238 196q-4 15 7 29l13-4q-5-22-20-25Zm91 13q-13 3-13 18l11 8q9-16 2-26Z" fill="#bda587"/>
+  <path d="m170 275 18-3-7 12Z" fill="#243e32"/>
+  <path d="m231 253 12 2" stroke="#243e32" stroke-width="5" stroke-linecap="round"/>
+  <path d="m194 288 23 8" stroke="#536353" stroke-width="2" stroke-linecap="round"/>
+  <g stroke="#657e61" stroke-width="2" stroke-dasharray="4 5">
+    <path d="M242 187v-65h153"/><path d="M177 277H95v-75"/><path d="M302 382v48h100"/><path d="M787 342V169h-71"/>
+  </g>
+  <g fill="#a94727"><circle cx="242" cy="187" r="5"/><circle cx="177" cy="277" r="5"/><circle cx="302" cy="382" r="5"/><circle cx="787" cy="342" r="5"/></g>
+  <g fill="#243e32" font-family="Georgia, serif" font-size="24">
+    <text x="405" y="130">Small, rounded ears</text><text x="42" y="169">Short</text><text x="42" y="196">muzzle</text><text x="413" y="438">Fur-covered paws</text><text x="620" y="122">Thick tail;</text><text x="620" y="151">no contrasting tip</text>
+  </g>
+  <path d="M40 463h880" stroke="#c9d1be" stroke-width="2"/>
+  <g stroke="#8e9e86" stroke-width="2">
+    <rect x="46" y="492" width="58" height="42" rx="12" fill="#807460"/><rect x="270" y="492" width="58" height="42" rx="12" fill="#faf7ef"/>
+    <rect x="496" y="492" width="58" height="42" rx="12" fill="#514b48"/><rect x="720" y="492" width="58" height="42" rx="12" fill="#746d68"/>
+  </g>
+  <g fill="#243e32" font-family="Verdana, sans-serif" font-size="15">
+    <text x="115" y="507">White morph</text><text x="115" y="530">Summer</text><text x="339" y="507">White morph</text><text x="339" y="530">Winter</text>
+    <text x="565" y="507">Blue morph</text><text x="565" y="530">Summer</text><text x="789" y="507">Blue morph</text><text x="789" y="530">Winter</text>
+  </g>
+  <text x="480" y="574" text-anchor="middle" fill="#536353" font-family="Verdana, sans-serif" font-size="16">Simplified coat colors / individuals vary / both morphs molt</text>
+</svg>

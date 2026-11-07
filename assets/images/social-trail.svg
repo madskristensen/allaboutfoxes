@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Back to the den sharing card</title>
+  <desc id="desc">A fox beside a winding woodland trail, inviting lost explorers back to All About Foxes.</desc>
+  <rect width="1200" height="630" fill="#faf7ef"/>
+  <rect x="28" y="28" width="1144" height="574" rx="16" fill="none" stroke="#d9dccb" stroke-width="2"/>
+  <text x="75" y="141" font-family="Verdana, sans-serif" font-size="17" letter-spacing="3" fill="#536353">ALL ABOUT FOXES</text>
+  <g font-family="Georgia, serif" font-size="73" fill="#243e32"><text x="70" y="260">A little</text><text x="70" y="350">off-track?</text></g>
+  <text x="75" y="439" font-family="Verdana, sans-serif" font-size="24" fill="#536353">Let's find our way back to the den.</text>
+  <text x="75" y="552" font-family="Verdana, sans-serif" font-size="17" fill="#243e32">www.allaboutfoxes.com</text>
+  <rect x="672" y="84" width="428" height="464" rx="205" fill="#e2e8d9"/>
+  <path d="M702 548Q1069 453 866 365Q715 282 1024 142" fill="none" stroke="#d5c1a2" stroke-width="38"/>
+  <g stroke="#7e977e" stroke-width="13" fill="none"><path d="M730 115L749 433M1053 91L1040 397"/><path d="M742 294L695 246M1044 247L1086 197" stroke-width="7"/></g>
+  <g transform="translate(806 238) scale(1.65)"><path fill="#bd542e" d="M12 9 40 29Q50 25 60 29L88 9 84 62 50 94 16 62Z"/><path fill="#653b30" d="m20 23 16 13-15 12zm60 0L64 36l15 12z"/><path fill="#fff6e7" d="M17 52q18-4 33 24Q65 48 83 52L50 94Z"/><path fill="#283e33" d="m43 77 14 0-7 9z"/><path fill="none" stroke="#283e33" stroke-linecap="round" stroke-width="4" d="m29 53 8 3m26 0 8-3"/></g>
+</svg>

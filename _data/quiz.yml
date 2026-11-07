@@ -1,0 +1,69 @@
+- question: Which animal family do foxes belong to?
+  options: [Felidae, Canidae, Ursidae]
+  answer: 2
+  explanation: Foxes belong to Canidae, the dog family. Cats belong to Felidae and bears belong to Ursidae.
+  source: /foxes/red-fox/#profile-heading
+  source_label: Check the red fox's pocket field guide
+
+- question: Is a silver fox a separate species from the red fox?
+  options: ["Yes", "No", "Only in winter"]
+  answer: 2
+  explanation: A silver fox is a dark color form of the red fox, Vulpes vulpes. Coat color alone does not define a species.
+  source: /foxes/red-fox/#how-do-you-recognize-a-red-fox
+  source_label: Investigate red fox coat colors
+
+- question: How many teeth does an adult red fox normally have?
+  options: ["28", "32", "42"]
+  answer: 3
+  explanation: An adult red fox normally has 42 teeth. Its slicing carnassial teeth and crushing back teeth help it handle a mixed diet.
+  source: /foxes/red-fox/#teeth-and-tracks-the-close-up-clues
+  source_label: Count the red fox's teeth
+
+- question: A red fox has five digits on a front foot. How many toes normally show in its print?
+  options: [Four, Five, Three]
+  answer: 1
+  explanation: Four toes normally show. The raised fifth digit, called a dewclaw, does not usually touch the ground. A four-toed print alone is not proof of a fox.
+  source: /foxes/red-fox/#teeth-and-tracks-the-close-up-clues
+  source_label: Follow the red fox's track clues
+
+- question: What do scientists call a hidden store of food?
+  options: [A molt, A territory, A cache]
+  answer: 3
+  explanation: A cache is food hidden for later. Both red and Arctic foxes can store surplus food instead of eating it all at once.
+  source: /foxes/red-fox/#what-is-on-the-menu
+  source_label: Explore the red fox's outdoor pantry
+
+- question: What happens to a blue-morph Arctic fox's coat in winter?
+  options: [It turns snow-white, It stays dark but becomes somewhat lighter, It turns bright sky-blue]
+  answer: 2
+  explanation: Blue-morph foxes remain dark or charcoal-colored, becoming somewhat lighter in winter. White-morph Arctic foxes are the ones that grow white winter coats.
+  source: /foxes/arctic-fox/#white-morph-or-blue-morph
+  source_label: Compare the Arctic fox's coat morphs
+
+- question: Which Arctic fox feature helps protect its feet from the cold?
+  options: [Fur on the soles of its paws, Bare webbed feet, Extra-long claws that make heat]
+  answer: 1
+  explanation: Dense winter fur covers the soles of an Arctic fox's paws. Fur slows heat loss; it does not make heat itself.
+  source: /foxes/arctic-fox/#how-does-an-arctic-fox-keep-warm
+  source_label: Unpack the Arctic fox's cold-weather toolkit
+
+- question: Do Arctic foxes hibernate through the winter?
+  options: ["Yes, all winter", "Only the white ones do", "No, they keep finding food"]
+  answer: 3
+  explanation: Arctic foxes do not hibernate. They stay active and need food through the winter, sometimes scavenging seal remains on sea ice.
+  source: /foxes/arctic-fox/#how-does-an-arctic-fox-keep-warm
+  source_label: Find out how Arctic foxes face winter
+
+- question: Which small mammals are important prey for many inland Arctic foxes?
+  options: [Lemmings and tundra voles, Koalas and wombats, Penguins and puffins]
+  answer: 1
+  explanation: Many inland Arctic foxes depend on lemmings and tundra voles. Coastal foxes may rely more on seabirds, so the menu changes with habitat.
+  source: /foxes/arctic-fox/#what-is-on-the-arctic-menu
+  source_label: Investigate the Arctic menu
+
+- question: About how long is an Arctic fox's gestation in the Alaska wildlife account?
+  options: [About 12 days, About 52 days, About 12 months]
+  answer: 2
+  explanation: Alaska Fish and Game reports about 52 days of gestation, the time pups develop before birth. It is an approximate figure, not an exact deadline for every fox.
+  source: /foxes/arctic-fox/#from-newborn-to-young-hunter
+  source_label: Follow an Arctic fox pup's early life

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" fill="none" role="img" aria-labelledby="title description">
+  <title id="title">Gray fox field marks</title>
+  <desc id="description">A compact gray fox has a grizzled gray back, reddish-brown sides and legs, a pale throat, and a long tail with a black stripe on top ending in a black tip. An inset shows a simplified hooked claw gripping tree bark.</desc>
+  <defs>
+    <pattern id="grizzle" width="21" height="19" patternUnits="userSpaceOnUse"><rect width="21" height="19" fill="#8d9084"/><path d="m3 5 5 2m4 8 4-2" stroke="#d5d7c9" stroke-width="2" stroke-linecap="round"/></pattern>
+  </defs>
+  <rect width="960" height="560" rx="20" fill="#edf0e6"/>
+  <text x="40" y="42" fill="#536353" font-family="Verdana, sans-serif" font-size="14" letter-spacing="2">THE GRAY FOX / FOLLOW THE FIELD MARKS</text>
+  <ellipse cx="482" cy="396" rx="315" ry="14" fill="#dce3d1"/>
+  <path d="M566 260c103-48 200-14 297 81-71 65-191 26-264-30Z" fill="#8d9084"/>
+  <path d="M590 263c91-29 170 1 257 79" stroke="#343d35" stroke-width="17" stroke-linecap="round"/>
+  <path d="M821 302q22 15 42 39-21 20-54 25l-26-26Z" fill="#343d35"/>
+  <path d="M300 245c72-40 171-36 254 3l55 53-19 42-221 7-77-45Z" fill="#b87546"/>
+  <path d="M300 245c72-40 171-36 254 3l37 33c-89 13-171 10-236-5l-61 8Z" fill="url(#grizzle)"/>
+  <path d="m338 316 38 11-15 49 12 16h-52l1-38Zm182 8 36 1 8 51 18 16h-53l-14-36Z" fill="#9f603f"/>
+  <path d="m300 304 42 10-13 59 8 20h-54l3-40Zm268-9 40 4-4 73 18 21h-54l-9-44Z" fill="#b87546"/>
+  <path d="m231 225 6-68 44 61 24-37 18 69-22 60-62 7-67-40 45-28Z" fill="url(#grizzle)"/>
+  <path d="m242 179 25 36-29 6Zm62 23 10 39-20-9Z" fill="#704b36"/>
+  <path d="m172 277 67 11 50-17 12 39-62 7Z" fill="#faf7ef"/>
+  <path d="m172 272 19-1-8 12Z" fill="#243e32"/>
+  <path d="m227 253 12 3m-9 4 9 10" stroke="#343d35" stroke-width="4" stroke-linecap="round"/>
+  <g stroke="#657e61" stroke-width="2" stroke-dasharray="4 5"><path d="M445 232V121H338"/><path d="M301 380v54h99"/><path d="M716 281V164h-72"/><path d="M839 338v90h-97"/></g>
+  <g fill="#a94727"><circle cx="445" cy="232" r="5"/><circle cx="301" cy="380" r="5"/><circle cx="716" cy="281" r="5"/><circle cx="839" cy="338" r="5"/></g>
+  <g fill="#243e32" font-family="Georgia, serif" font-size="24"><text x="94" y="127">Grizzled gray back</text><text x="410" y="443">Rusty legs</text><text x="570" y="113">Black stripe</text><text x="570" y="142">on top of the tail</text><text x="690" y="459">Black tail tip</text></g>
+  <rect x="42" y="465" width="276" height="71" rx="10" fill="#f6eede" stroke="#d9dccb"/>
+  <path d="M82 475v49m9-47v45" stroke="#947558" stroke-width="6" stroke-linecap="round"/>
+  <path d="M54 483q23-6 28 11 7 19-10 21" stroke="#343d35" stroke-width="5" stroke-linecap="round"/>
+  <text x="110" y="494" fill="#243e32" font-family="Georgia, serif" font-size="21">Hooked claw</text>
+  <text x="110" y="519" fill="#536353" font-family="Verdana, sans-serif" font-size="14">Grips bark / schematic</text>
+  <text x="480" y="531" fill="#536353" font-family="Verdana, sans-serif" font-size="15">Not a silver-colored red fox / a different species</text>
+</svg>
