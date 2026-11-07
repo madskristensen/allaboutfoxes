@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
   <title id="title">All About Foxes home-screen icon</title>
-  <desc id="desc">The same orange fox face used in the page header, on the site's cream background. Its ears and face stay within the maskable-icon safe area.</desc>
-  <rect width="512" height="512" fill="#faf7ef"/>
+  <desc id="desc">The same orange fox face used in the page header, on the homepage's pale green background. Its ears and face stay within the maskable-icon safe area.</desc>
+  <rect width="512" height="512" fill="#e8ecdf"/>
   <g transform="translate(76 75) scale(3.6)">
     <path fill="#bd542e" d="M12 9 40 29Q50 25 60 29L88 9 84 62 50 94 16 62Z"/>
     <path fill="#653b30" d="m20 23 16 13-15 12zm60 0L64 36l15 12z"/>

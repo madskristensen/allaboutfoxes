@@ -6,6 +6,7 @@ require "fileutils"
 require "uri"
 require "yaml"
 require "json"
+require "zlib"
 
 ROOT = File.expand_path("..", __dir__)
 
@@ -59,6 +60,20 @@ def check_social_metadata(document, file, root, baseurl)
   assert(width >= 600 && height >= 300 && (1.8..2.1).cover?(width.fdiv(height)), "#{file}: sharing image must be a large landscape image")
 end
 
+def check_icon_background(path)
+  bytes = File.binread(path)
+  assert(bytes.getbyte(24) == 8 && [2, 6].include?(bytes.getbyte(25)), "#{path}: expected an 8-bit RGB or RGBA PNG")
+  compressed = +"".b
+  offset = 8
+  while offset < bytes.bytesize
+	length = bytes.byteslice(offset, 4).unpack1("N")
+	compressed << bytes.byteslice(offset + 8, length) if bytes.byteslice(offset + 4, 4) == "IDAT"
+	offset += length + 12
+  end
+  pixel = Zlib::Inflate.inflate(compressed).byteslice(1, bytes.getbyte(25) == 6 ? 4 : 3).bytes
+  assert(pixel.first(3) == [232, 236, 223] && (pixel.length == 3 || pixel.last == 255), "#{path}: home-screen icon must have an opaque homepage-green background")
+end
+
 def check_manifest(root, baseurl)
   manifest = JSON.parse(root.join("site.webmanifest").read)
   assert(manifest.values_at("name", "short_name", "lang", "display") == ["All About Foxes", "Fox Field Guide", "en", "standalone"], "Manifest must identify the field guide and use standalone display")
@@ -74,13 +89,17 @@ def check_manifest(root, baseurl)
 	path = root.join(icon["src"].delete_prefix("#{baseurl}/"))
 	size = icon.fetch("sizes").split("x").map(&:to_i)
 	assert(path.file? && image_dimensions(path) == size, "Manifest icon sizes must match actual pixels")
+	check_icon_background(path)
   end
   assert(icons.any? { |icon| icon["sizes"] == "512x512" && icon.fetch("purpose").split.include?("maskable") }, "Manifest must include a maskable icon")
   { "apple-touch-icon.png" => 180, "favicon-32.png" => 32 }.each do |name, size|
 	assert(image_dimensions(root.join("assets/images/#{name}")) == [size, size], "Incorrect #{name} dimensions")
+	check_icon_background(root.join("assets/images/#{name}")) if name == "apple-touch-icon.png"
   end
   original = Nokogiri::XML(root.join("assets/images/fox-mark.svg").read)
   icon = Nokogiri::XML(root.join("assets/images/app-icon.svg").read)
+	background = icon.at_xpath("/*[local-name()='svg']/*[local-name()='rect']")
+	assert(background && %w[width height fill].map { |attribute| background[attribute] } == ["512", "512", "#e8ecdf"], "Home-screen artwork must have a full-size homepage-green background")
   logo_paths = ->(svg) { svg.xpath("//*[local-name()='path']").map { |path| path["d"] } }
   assert(logo_paths.call(original) == logo_paths.call(icon), "Home-screen artwork must preserve the header fox logo, not substitute a different fox")
 end
