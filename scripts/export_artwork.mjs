@@ -72,9 +72,10 @@ try {
     ['app-icon', 'icon-192', 192, 192],
     ['app-icon', 'icon-512', 512, 512],
     ['app-icon', 'apple-touch-icon', 180, 180],
+    ['app-icon', 'icon-maskable-512', 512, 512, 'translate(76 75) scale(3.6)'],
     ['fox-mark', 'favicon-32', 32, 32],
   ];
-  for (const [source, name, width, height] of exports) {
+  for (const [source, name, width, height, transform] of exports) {
     await call('Emulation.setDeviceMetricsOverride', { width, height, deviceScaleFactor: 1, mobile: false });
     const url = pathToFileURL(join(images, `${source}.svg`)).href;
     const navigation = await call('Page.navigate', { url });
@@ -91,6 +92,8 @@ try {
         if (svg.localName !== 'svg') throw new Error('Expected an SVG document');
         svg.setAttribute('width', '${width}');
         svg.setAttribute('height', '${height}');
+        const transform = ${JSON.stringify(transform ?? null)};
+        if (transform) svg.querySelector('g').setAttribute('transform', transform);
         return document.fonts.ready.then(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
       })()`, awaitPromise: true,
     });

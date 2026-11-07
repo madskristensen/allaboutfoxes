@@ -71,7 +71,7 @@ def check_icon_background(path)
 	offset += length + 12
   end
   pixel = Zlib::Inflate.inflate(compressed).byteslice(1, bytes.getbyte(25) == 6 ? 4 : 3).bytes
-  assert(pixel.first(3) == [232, 236, 223] && (pixel.length == 3 || pixel.last == 255), "#{path}: home-screen icon must have an opaque homepage-green background")
+	assert(pixel.first(3) == [126, 151, 126] && (pixel.length == 3 || pixel.last == 255), "#{path}: home-screen icon must have an opaque woodland sage green background")
 end
 
 def check_manifest(root, baseurl)
@@ -83,7 +83,7 @@ def check_manifest(root, baseurl)
   end
   assert(manifest["theme_color"] == "#244c3d" && manifest["background_color"] == "#faf7ef", "Manifest colors must match the woodland theme")
   icons = manifest.fetch("icons")
-  assert(icons.map { |icon| icon["sizes"] }.sort == ["192x192", "512x512"], "Manifest must supply 192- and 512-pixel icons")
+	assert(icons.map { |icon| icon.values_at("sizes", "purpose") }.sort == [["192x192", "any"], ["512x512", "any"], ["512x512", "maskable"]], "Manifest must supply ordinary 192- and 512-pixel icons and a separate padded maskable icon")
   icons.each do |icon|
 	assert(icon["type"] == "image/png" && icon["src"].start_with?("#{baseurl}/assets/images/"), "Manifest icons must be local, subpath-aware PNGs")
 	path = root.join(icon["src"].delete_prefix("#{baseurl}/"))
@@ -98,8 +98,9 @@ def check_manifest(root, baseurl)
   end
   original = Nokogiri::XML(root.join("assets/images/fox-mark.svg").read)
   icon = Nokogiri::XML(root.join("assets/images/app-icon.svg").read)
+	assert(icon.at_xpath("/*[local-name()='svg']/*[local-name()='g']")&.[]("transform") == "translate(16 9) scale(4.8)", "Ordinary home-screen artwork must use the larger centered fox within the unchanged 512-pixel canvas")
 	background = icon.at_xpath("/*[local-name()='svg']/*[local-name()='rect']")
-	assert(background && %w[width height fill].map { |attribute| background[attribute] } == ["512", "512", "#e8ecdf"], "Home-screen artwork must have a full-size homepage-green background")
+	assert(background && %w[width height fill].map { |attribute| background[attribute] } == ["512", "512", "#7e977e"], "Home-screen artwork must have a full-size woodland sage green background")
   logo_paths = ->(svg) { svg.xpath("//*[local-name()='path']").map { |path| path["d"] } }
   assert(logo_paths.call(original) == logo_paths.call(icon), "Home-screen artwork must preserve the header fox logo, not substitute a different fox")
 end

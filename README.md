@@ -297,16 +297,18 @@ image service is needed.
 
 Every page links to `site.webmanifest`, which defines the app name, stable
 identity, home start URL, scope, standalone display, woodland theme, and local
-192- and 512-pixel PNG icons. The 512-pixel icon supports both ordinary and
-maskable use: the header's fox logo stays inside the central 80%-diameter safe
-circle, with the homepage's opaque pale green background (#e8ecdf) extending to the edges. `apple-touch-icon.png`
+192- and 512-pixel PNG icons with an enlarged fox face. A separate 512-pixel
+maskable icon keeps the fox inside the central 80%-diameter safe circle to
+prevent cropping by Android launchers. All icons have an opaque woodland sage
+green background (#7e977e) extending to the edges. `apple-touch-icon.png`
 (180 pixels) supplies the iPhone/iPad icon; a 32-pixel PNG favicon backs up
 the existing SVG favicon. All paths also work under a repository subpath.
 
 After an icon update is deployed, an existing home-screen shortcut may keep its
 cached image. Remove it and add the site to the home screen again to refresh it.
 
-The editable icon source is `assets/images/app-icon.svg`. To re-export that
+The editable icon source is `assets/images/app-icon.svg`; the exporter applies
+extra padding for `icon-maskable-512.png`. To re-export that
 artwork and all four social-card SVGs using Node.js 22+ and a locally installed
 Edge/Chromium browser, run:
 
